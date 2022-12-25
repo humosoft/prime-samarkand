@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "imgLink": "assets/img/placeholder/1051x487.jpg",
+        "imgTitle": "Ship Logistics | Image 1"
+    },
+    {
+        "id": 2,
+        "imgLink": "assets/img/placeholder/1051x487.jpg",
+        "imgTitle": "Ship Logistics | Image 2"
+    },
+    {
+        "id": 3,
+        "imgLink": "assets/img/placeholder/1051x487.jpg",
+        "imgTitle": "Ship Logistics | Image 3"
+    },
+    {
+        "id": 4,
+        "imgLink": "assets/img/placeholder/1051x487.jpg",
+        "imgTitle": "Ship Logistics | Image 4"
+    }
+]

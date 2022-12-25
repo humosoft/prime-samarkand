@@ -1,0 +1,114 @@
+//=================================================
+// Gallery
+//=================================================
+
+/*=============================
+// Gallery items
+=============================*/
+.gallery-items {
+    .gallery-item {
+        position: relative;
+        float: left;
+        width: 25%;
+        overflow: hidden;
+        color: $body_text_tertiary_color;
+
+        @media #{$media_xl} {
+            width: 50%;
+        }
+
+        @media #{$media_sm} {
+            width: 100%;
+        }
+
+        .gallery-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            padding-top: 2.105rem;
+            padding-bottom: 2.105rem;
+
+            h1, h2, h3, h4, h5, h6 {
+                color: $body_text_tertiary_color;
+            }
+
+            .text {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                padding-left: 2.105rem;
+                padding-right: 2.105rem;
+                transform: translateY(-2.105rem);
+                transition: transform $transition-s ease-in-out;
+            }
+
+            .zoom {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                opacity: 0;
+                transition: opacity $transition-s ease-in-out;
+
+                .zoom-icon {
+                    font-size: 1.316rem;
+                    margin-bottom: 1.316rem;
+                }
+            }
+        }
+
+        .img {
+            &.object-fit {
+                &:before {
+                    padding-top: 120.5%;
+                }
+
+                @media #{$media_xl} {
+                    &:before {
+                        padding-top: 80%;
+                    }
+                }
+            }
+
+            &-bg-color {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                background-image: linear-gradient(to bottom, rgba(11, 5, 38, 0), $body_main_element_primary_color);
+                opacity: 0.8;
+                @extend .transition-all;
+            }
+        }
+
+        .object-fit-cover {
+            @extend .transition-all;
+            transform: perspective(1px) scale(1) translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        &:hover {
+            .img {
+                &-bg-color {
+                    background-color: $body_main_element_primary_color;
+                    opacity: 0.86;
+                }
+
+                .object-fit-cover {
+                    transform: perspective(1px) scale(1.1) translateZ(0);
+                }
+            }
+
+            .zoom {
+                opacity: 1;
+            }
+        }
+    }
+}

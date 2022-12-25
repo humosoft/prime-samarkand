@@ -1,0 +1,87 @@
+//=================================================
+// Reviews
+//=================================================
+
+.reviews {
+    .review {
+        border: 1px solid $body_border_color;
+        padding: $space_md;
+    }
+}
+
+.star-raiting {
+    color: #f8bc1c;
+    @extend .no-space;
+
+    [class*='fa-'] {
+        margin-left: 0.211rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+// Slider
+.swiper-container {
+    &.reviews {
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 19.263rem;
+            height: 100%;
+            background: linear-gradient(to right, rgba($body_background_color, 1) 0%, rgba($body_background_color, 0) 100%, rgba($body_background_color, 1) 100%);
+            z-index: 2;
+
+            @media #{$media_xl} {
+                display: none;
+            }
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 19.263rem;
+            height: 100%;
+            background: linear-gradient(to left, rgba($body_background_color, 1) 0%, rgba($body_background_color, 0) 100%, rgba($body_background_color, 1) 100%);
+            z-index: 2;
+
+            @media #{$media_xl} {
+                display: none;
+            }
+        }
+
+        .swiper-slide-left {
+            padding-right: 2.105rem;
+
+            @media #{$media_sm} {
+                padding-right: 0;
+                text-align: center;
+                margin-bottom: $space_sm;
+            }
+
+            img {
+                max-width: 4.632rem !important;
+            }
+        }
+
+        .swiper-slide-right {
+            .review-author-top {
+                @media #{$media_sm} {
+                    text-align: center;
+                }
+            }
+
+            .review-author-bottom {
+                @media #{$media_sm} {
+                    text-align: center;
+                    margin-top: $space_sm;
+                }
+            }
+        }
+    }
+}

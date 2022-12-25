@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "image": "assets/img/placeholder/80x80.jpg",
+        "authorName": "Rosie Ford",
+        "starsNum": 5,
+        "authorPosition": "CEO at company",
+        "reviewText": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."
+    },
+    {
+        "id": 2,
+        "image": "assets/img/placeholder/80x80.jpg",
+        "authorName": "Rosie Ford",
+        "starsNum": 5,
+        "authorPosition": "CEO at company",
+        "reviewText": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."
+    },
+    {
+        "id": 3,
+        "image": "assets/img/placeholder/80x80.jpg",
+        "authorName": "Rosie Ford",
+        "starsNum": 5,
+        "authorPosition": "CEO at company",
+        "reviewText": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."
+    }
+]

@@ -1,0 +1,50 @@
+//=================================================
+// Languages
+//=================================================
+
+.languages {
+    font-size: 0.789rem;
+    text-transform: uppercase;
+    color: $body_text_tertiary_color;
+
+    .nav {
+        .lang-item {
+            margin-left: $space_xs;
+            margin-bottom: 0;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            a {
+                @extend .transform-scale-h;
+            }
+
+            &.active, &.current-lang {
+                a {
+                    cursor: not-allowed;
+                    font-family: $font_primary_bold;
+                    @extend .transform-scale-h-none;
+                }
+            }
+        }
+
+        &.flex-column {
+            .lang-item {
+                margin-left: 0;
+                margin-bottom: $space_xs;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.lang-position {
+    position: absolute !important;
+    width: auto !important;
+    right: 0;
+    bottom: $space_sm;
+}

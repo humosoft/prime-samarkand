@@ -1,0 +1,68 @@
+//=================================================
+// Card
+//=================================================
+
+.card {
+    .card-header {
+        margin-bottom: 0 !important;
+        @extend .after;
+    }
+
+    .card-body {
+        &.p-large {
+            padding: 3.13rem 4.38rem;
+
+            @media #{$media_xxl} {
+                padding: 2.19rem 3.44rem;
+            }
+        }
+    }
+
+    ul {
+        margin-bottom: 0 !important;
+    }
+}
+
+/*=============================
+// Card Columns
+=============================*/
+.card-columns {
+    &.columns-4 {
+        column-count: 4;
+    }
+
+    &.column-no-gap {
+        column-gap: 0;
+    }
+}
+
+/*=============================
+// Accordion card
+=============================*/
+.accordion {
+    .card {
+        .card-header {
+            position: relative;
+            border: 0;
+        }
+    }
+
+    .btn-link {
+        width: 100%;
+        text-align: left;
+
+        [class*='fa-'] {
+            position: absolute;
+            top: 50%;
+            right: $card-spacer-x;
+            @include transform(translateY(-50%));
+            @extend .text-secondary;
+        }
+
+        &.collapsed {
+            [class*='fa-'] {
+                @include transform(translateY(-50%) rotate(-180deg));
+            }
+        }
+    }
+}

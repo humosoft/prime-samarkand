@@ -1,0 +1,25 @@
+//=================================================
+// About
+//=================================================
+
+#about-us {
+    .list-group {
+        .list-group-item {
+            border: 0;
+            padding: 0;
+            padding-right: $space_md;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    @media #{$media_xl} {
+        .embed {
+            .embed-image-overlay {
+                max-height: 26.316rem;
+            }
+        }
+    }
+}

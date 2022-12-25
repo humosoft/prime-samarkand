@@ -1,0 +1,21 @@
+//=================================================
+// Background
+//=================================================
+
+.bg-gray {
+    background-color: $gray;
+}   
+
+.bg-gray-light {
+    background-color: $gray-light;
+}
+
+.bg-gray-dark {
+    background-color: $gray-dark;
+}
+
+.bg-dark {
+    h1, h2, h3, h4, h5, h6, a, p {
+        color: $body_text_tertiary_color;
+    }
+}

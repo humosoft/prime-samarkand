@@ -1,0 +1,39 @@
+//=================================================
+// Back
+//=================================================
+
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 1.25rem;
+    z-index: 99;
+    right: $wrapper_p_r;
+
+    @media #{$media_xxl} {
+        right: $wrapper_p_r_xxl;
+    }
+
+    @media #{$media_xl} {
+        right: $wrapper_p_r_xl;
+    }
+
+    @media #{$media_sm} {
+        right: $wrapper_p_r_sm;
+    }
+
+    a {
+        display: block;
+        width: 3.158rem;
+        height: 3.158rem;
+        color: $back_to_top_color;
+        background: $back_to_top_background_color;
+        box-shadow: -10px 20px 30px -17px $back_to_top_background_color;
+
+        [class*='fa-'] {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+        }
+    }
+}

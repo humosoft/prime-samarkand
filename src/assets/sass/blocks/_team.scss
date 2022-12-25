@@ -1,0 +1,43 @@
+//=================================================
+// Team
+//=================================================
+
+.team-member {
+	@extend .style-default;
+
+	.img {
+		max-height: 26.55rem;
+
+		&.object-fit {
+			&:before {
+				padding-top: 26.55rem;
+			}
+		}
+	}
+
+	.item-content {
+		margin-top: $space_xs;
+
+		.item-t-head {
+			color: $body_headline_color;
+		}
+
+		.item-description {
+			a {
+				color: $body_text_primary_color;
+
+				&:hover {
+					color: $body_links_hover_color;
+				}
+			}
+
+			p {
+				margin-bottom: 0.5rem !important;
+
+				&:last-child {
+					margin-bottom: 0 !important;
+				}
+			}
+		}
+	}
+}

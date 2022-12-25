@@ -1,0 +1,129 @@
+//=================================================
+// Single
+//=================================================
+
+#single {
+    .single-content {
+        .img {
+            margin-bottom: $space_lg;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .meta {
+            margin-bottom: 2.632rem;
+
+            
+            li {
+                float: left;
+                margin-right: 1.26rem;
+                margin-bottom: 0;
+            }
+
+            .date {
+                margin-right: $space_sm;
+            }
+
+            span {
+                margin-right: 0.263rem;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:not(.date) {
+                    color: $body_links_color;
+                }
+            }
+        }
+
+        .tags {
+            margin-top: $space_lg - 0.789rem;
+            
+            p {
+                display: table;
+                line-height: normal;
+                word-break: break-all;
+
+                &:before, &:after {
+                    display: none;
+                }
+                
+                span {
+                    margin-right: 0.31rem;
+                }
+
+                .tags-title {
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-family: $font_primary_bold;
+                    font-size: 1.316rem;
+                    color: $body_headline_color;
+                    margin-right: 1.474rem;
+                    margin-top: 0.789rem;
+                }
+
+                a {
+                    @extend .btn;
+                    @extend .btn-primary;
+                    @extend .btn-sm;
+                    margin-right: 0.789rem;
+                    margin-top: 0.789rem;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=============================
+// Single post
+=============================*/
+.single-post, [class*='single-'] {
+    #single {
+        .single-content {
+            .img {
+                &.object-fit {
+                    &:before {
+                        padding-top: 47%;
+                    }
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0.8;
+                    background: linear-gradient(to bottom, rgba(11, 5, 38, 0), $body_main_element_primary_color 98%);
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+/*=============================
+// Single services
+=============================*/
+.single-adveits_service {
+    .widget_service {
+        .card {
+            border-color: $body_main_element_secondary_color;
+            height: auto;
+
+            .card-body {
+                .card-title {
+                    color: $body_main_element_secondary_color;
+                    margin-bottom: 1.684rem
+                }
+            }
+        }
+    }
+}

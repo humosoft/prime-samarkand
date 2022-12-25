@@ -1,0 +1,25 @@
+//=================================================
+// Block
+//=================================================
+
+:not(#page-title) {
+    &.block {
+        .title {
+            h1, h2, h3, h4, h5, h6 {
+                padding-bottom: $space_lg;
+                margin-bottom: 0;
+                @extend .h4-size;
+
+                [class*='fa-'] {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+[class*='section-height-full'] {
+    > [class*='container'] {
+        height: 100%;
+    }
+}

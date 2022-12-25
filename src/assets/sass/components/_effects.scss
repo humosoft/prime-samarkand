@@ -1,0 +1,38 @@
+//=================================================
+// Effects
+//=================================================
+
+/*=============================
+// Ripple
+=============================*/
+@keyframes ripple {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    70% {
+        -webkit-transform: scale(1.25);
+        transform: scale(1.25);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1.35);
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
+
+/*=============================
+// Spin
+=============================*/
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

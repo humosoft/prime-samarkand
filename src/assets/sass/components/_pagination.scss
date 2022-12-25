@@ -1,0 +1,39 @@
+//=================================================
+// Pagination
+//=================================================
+
+.pagination {
+    margin-top: $space_lg;
+    margin-left: 0;
+    border-radius: 0 !important;
+    
+    &:first-child {
+        margin-top: 0;
+    }
+
+    .page-item {
+        margin-bottom: 0;
+
+        &:before {
+            display: none;
+        }
+
+        .page-link {
+            border-radius: 0 !important;
+            @extend .transition-all;
+
+            &:hover {
+                background-color: $body_links_color;
+                color: $white;
+                @extend .transition-all;
+            }
+        }
+
+        &.current, &.active {
+            .page-link {
+                background-color: $body_links_color;
+                color: $white;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+//=================================================
+// Tables
+//=================================================
+
+table, [class*="calendar"] {
+    th {
+        font-family: $font_primary_bold;
+    }
+
+    &:not(.table-dark) {
+        th {
+            color: $body_headline_color;
+        }
+    }
+
+    th, td {
+        border: 1px solid $body_border_color;
+        padding: 0.8rem 1rem;
+    }
+}

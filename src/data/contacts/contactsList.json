@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "adress": "575 Crescent Ave. Quakertown, PA 18951",
+        "phone": "+432 533 12 523",
+        "email": "info@domain.com",
+        "country": "Lithuania",
+        "open": "Mon - Fri: 9am - 6pm"
+    },
+    {
+        "id": 2,
+        "adress": "575 Crescent Ave. Quakertown, PA 18951",
+        "phone": "+432 533 12 523",
+        "email": "info@domain.com",
+        "country": "Germany",
+        "open": "Mon - Fri: 9am - 6pm"
+    },
+    {
+        "id": 3,
+        "adress": "575 Crescent Ave. Quakertown, PA 18951",
+        "phone": "+432 533 12 523",
+        "email": "info@domain.com",
+        "country": "Italy",
+        "open": "Mon - Fri: 9am - 6pm"
+    }
+]

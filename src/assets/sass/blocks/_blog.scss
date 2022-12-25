@@ -1,0 +1,102 @@
+//=================================================
+// Blog
+//=================================================
+
+#news {
+    .row {
+        @media #{$media_sm} {
+            > [class*="col-"] {
+                padding-bottom: 2.10533rem;
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/*=============================
+// Card post
+=============================*/
+.card-post {
+    background-color: $card_background_color;
+    border: 0;
+    height: 100%;
+
+    .img {
+        &.object-fit {
+            &:before {
+                padding-top: 72.5%;
+            }
+        }
+    }
+
+    .img-bg-color {
+        content: '';
+        background-color: $body_main_element_primary_color;
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .card-category {
+        font-family: $font_primary_bold;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 2.105rem 0 0 2.105rem;
+
+        a {
+            font-family: $font_primary_bold;
+            margin-right: 1.125rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .card-body {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+
+        .card-title {
+            a {
+                display: block;
+                color: $body_links_color;
+
+                &:hover {
+                    color: $body_links_hover_color;
+                }
+            }
+        }
+    }
+
+    &.sticky {
+        box-shadow: -10px 20px 40px 0 rgba(0, 0, 0, 0.06);
+
+        .card-body {
+            padding-bottom: $card_spacer_y;
+        }
+
+        &.no-thumbnail {
+            padding: 2.105rem;
+
+            .card-body {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &.no-thumbnail {
+        .card-category {
+            position: relative;
+            padding: 0;
+        }
+    }
+}

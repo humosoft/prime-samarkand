@@ -1,0 +1,108 @@
+//=================================================
+// Modal
+//=================================================
+
+.modal {
+    background-color: $modal_background_color;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+    min-width: 320px;
+
+    .modal-dialog {
+        .modal-header {
+            .close {
+                &.btn {
+                    padding: 0;
+                    margin: 0 0 0 auto;
+                    font-size: 1.263rem;
+                }
+            }
+        }
+    }
+}
+
+/*=============================
+// Modal size
+=============================*/
+.modal-full {
+    max-width: 100%;
+    margin: 0;
+}
+
+/*=============================
+// Modal header
+=============================*/
+.modal-header-top {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+}
+
+/*=============================
+// Modal body
+=============================*/
+.modal-body-centered {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+    padding: 0;
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100vh;
+    }
+}
+
+/*=============================
+// Modal title
+=============================*/
+.modal-title {
+    margin-bottom: 0 !important;
+    @extend .after;
+}
+
+/*=============================
+// Modal menu
+=============================*/
+.modal.menu-modal {
+    .modal-body {
+        > * {
+            padding-top: $header_padding_t + $header_padding_b + 0.789rem + 1.263rem;
+            padding-bottom: $header_padding_b + 0.789rem;
+        }
+
+        .dropdown-icon {
+            color: $menu_links_color;
+            @extend .transition-all;
+
+            &:hover {
+                color: $menu_links_hover_color;
+                @extend .transition-all;
+            }
+        }
+    }
+}
+
+/*=============================
+// Modal search
+=============================*/
+.modal.search-modal {
+    .modal-body {
+        form {
+            width: 100%;
+            max-width: 1082px;
+            margin: auto;
+        }
+    }
+}
+
+/*=============================
+// Modal shortcode
+=============================*/
+.modal.shortcode-modal {
+    .modal-body {
+        padding-bottom: 5.684rem;
+    }
+}

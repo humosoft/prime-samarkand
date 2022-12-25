@@ -1,0 +1,454 @@
+//=================================================
+// Variables
+//=================================================
+
+//=============================
+// Media queries
+//=============================
+$retina:     "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+$media_xxxl: "(min-width: 1920px)";
+$media_xxl:  "(max-width: 1700px)";
+$media_xl:   "(max-width: 1199px)";
+$media_lg:   "(max-width: 991px)";
+$media_md:   "(max-width: 767px)";
+$media_sm:   "(max-width: 575px)";
+
+//=============================
+// Paths
+//=============================
+$img:   "../img/";
+$fonts: "../fonts/";
+$icons: "../icons/";
+
+//=============================
+// Colors
+//=============================
+$white:                                               #ffffff;
+$blue:                                                #3c8ee7;
+$indigo:                                              #7253e6;
+$purple:                                              #5f4b8b;
+$pink:                                                #e691b8;
+$red:                                                 #ec3f58;
+$orange:                                              #ff953d;
+$yellow:                                              #ffd042;
+$green:                                               #61d27c;
+$teal:                                                #40d9ac;
+$cyan:                                                #02aec9;
+$gray:                                                #efefef;
+$gray-light:                                          #f4f4f6;
+$gray-dark:                                           #a0a0a0;
+
+$light:                                               #f4f4f6;
+$dark:                                                #414258;
+
+// Body
+$body_text_primary_color:                             #707070;
+$body_text_secondary_color:                           #414258;
+$body_text_tertiary_color:                            #ffffff; // For dark background
+$body_headline_color:                                 #414258;
+$body_headline_icon_color:                            #ec3f58;
+$body_links_color:                                    #414258;
+$body_links_hover_color:                              #ec3f58;
+$body_background_color:                               #ffffff;
+
+$body_main_element_primary_color:                     #414258;
+$body_main_element_secondary_color:                   #ec3f58;
+$body_date_color:                                     #ec3f58;
+$body_border_color:                                   #efefef;
+$body_mark_background:                                #fcf8e3;
+
+// Header
+$header_color:                                        #414258;
+$header_background_color:                             #ffffff;
+$header_absolute_color:                               #ffffff;
+$header_absolute_background_color:                    transparent;
+
+// Footer
+$footer_color:                                        #ffffff;
+$footer_background_color:                             #414258;
+
+// Menu
+$menu_links_color:                                    #414258;
+$menu_links_hover_color:                              #ec3f58;
+$menu_links_active_color:                             #ec3f58;
+$menu_links_element_color:                            #ec3f58;
+
+// Dropdown
+$dropdown_links_color:                                #414258;
+$dropdown_links_hover_color:                          #ffffff;
+$dropdown_links_active_color:                         #ffffff;
+$dropdown_links_background_color:                     #ffffff;
+$dropdown_links_background_hover_color:               #ec3f58;
+$dropdown_links_background_active_color:              #ec3f58;
+
+// Forms
+$input_text_color:                                    #414258;
+$input_border_focus_color:                            #ec3f58;
+$input_placeholder_color:                             #414258;
+$label_color:                                         #707070;
+
+// Form primary
+$input_background_primary_color:                      transparent;
+$input_border_primary_color:                          #c6c6c6;
+
+// Form secondary
+$input_background_secondary_color:                    transparent;
+$input_border_secondary_color:                        #efefef;
+
+// Modals
+$modal_background_color:                              #ffffff;
+$modal_background_content_color:                      transparent;
+
+// Card
+$card_border_color:                                   #efefef;
+$card_background_color:                               transparent;
+
+// Widget
+$widget_background_color:                             #ffffff;
+$widget_border_color:                                 #efefef;
+$widget_headline_color:                               #ec3f58;
+
+// Embed
+$embed_play_background_color:                         #ec3f58;
+$embed_play_background_hover_color:                   #ffffff;
+$embed_play_color:                                    #ffffff;
+$embed_play_hover_color:                              #ec3f58;
+
+// Slider
+$slider_button_color:                                 #ec3f58;
+$slider_button_hover_color:                           #414258;
+$slider_pagination_color:                             #707070;
+$slider_pagination_current_color:                     #ec3f58;
+
+$slider_gallery_button_color:                         #414258;
+$slider_gallery_button_hover_color:                   #ec3f58;
+$slider_gallery_button_background_color:              #ffffff;
+$slider_gallery_button_background_hover_color:        #ffffff;
+
+// Map
+$map_information_color:                               #707070;
+$map_information_background_color:                    #ffffff;
+
+$map_pin_color:                                       #414258;
+
+// Pop-Up
+$popup_text_color:                                    #ffffff;
+$popup_background_color:                              rgba(0, 0, 0, 0.8);
+$popup_button_color:                                  #ffffff;
+$popup_button_hover_color:                            #ec3f58;
+$popup_button_background_color:                       transparent;
+$popup_button_background_hover_color:                 transparent;
+
+// Back to top
+$back_to_top_color:                                   #ffffff;
+$back_to_top_background_color:                        #414258;
+
+//=============================
+// Fonts
+//=============================
+$DMS:                                                 'DMSans-Regular', sans-serif;
+$DMS_b:                                               'DMSans-Bold', sans-serif;
+
+$font_primary:                                        $DMS;
+$font_primary_bold:                                   $DMS_b;
+
+$f_size_sm:                                           0.684rem; // 13px
+$f_size_df:                                           0.789rem; // 15px
+$f_size_lg:                                           1rem;     // 19px
+
+//=============================
+// Spacing
+//=============================
+$space_xl:                                            7.368rem; // 140px
+$space_lg:                                            3.158rem; // 60px
+$space_md:                                            2.368rem; // 45px
+$space_sm:                                            1.579rem; // 30px
+$space_xs:                                            1.053rem; // 20px
+
+//=============================
+// Header
+//=============================
+$header_padding_t:                                    1.526rem;
+$header_padding_b:                                    1.526rem;
+
+//=============================
+// Main
+//=============================
+$main_padding_t:                                      0;
+$main_padding_b:                                      7.368rem;
+
+//=============================
+// Footer
+//=============================
+$footer_padding_t:                                    2rem;
+$footer_padding_b:                                    2rem;
+
+//=============================
+// Wrapper
+//=============================
+$wrapper_max_w:                                       1800px;
+
+// Left
+$wrapper_p_l:                                         5.263rem;
+$wrapper_p_l_xxl:                                     2.368rem;
+$wrapper_p_l_xl:                                      1.578rem;
+$wrapper_p_l_sm:                                      1.25rem;
+
+// Right
+$wrapper_p_r:                                         5.263rem;
+$wrapper_p_r_xxl:                                     2.368rem;
+$wrapper_p_r_xl:                                      1.578rem;
+$wrapper_p_r_sm:                                      1.25rem;
+
+//=============================
+// Transition s
+//=============================
+$transition-s:                                        0.3s;
+
+//=============================
+// Components
+//=============================
+$border_radius:                                       0.25rem;
+$border_radius_sm:                                    0.3rem;
+$border_radius_lg:                                    0.2rem;
+
+$caret_vertical_align:                                middle;
+$caret_spacing:                                       0.263rem;
+
+$disabled_opacity:                                    0.5;
+
+//=============================
+// Typography
+//=============================
+$font_family_base:                                    $font_primary;
+
+$line_height_base:                                    1;
+$body_color:                                          $body_text_primary_color;
+
+$hr_border_color:                                     $body_border_color;
+
+//=============================
+// Links
+//=============================
+$link_color:                                          $body_links_color;
+$link_hover_color:                                    $body_links_hover_color;
+$link_hover_decoration:                               none;
+
+//=============================
+// Buttons
+//=============================
+$btn_font_family:                                     $font_primary_bold;
+
+$btn_padding_y:                                       1.053rem;
+$btn_padding_x:                                       1.053rem;
+$btn_padding_y_sm:                                    0.632rem;
+$btn_padding_x_sm:                                    0.632rem;
+$btn_padding_y_lg:                                    1.447rem;
+$btn_padding_x_lg:                                    1.447rem;
+
+$btn_font_size:                                       $f_size_df;
+$btn_font_size_sm:                                    $f_size_sm;
+$btn_font_size_lg:                                    $f_size_lg;
+
+$btn_line_height:                                     1.23;
+$btn_line_height_sm:                                  1.23;
+$btn_line_height_lg:                                  1.23;
+
+$btn_border_radius:                                   0;
+$btn_border_radius_sm:                                0;
+$btn_border_radius_lg:                                0;
+
+$btn_focus_width:                                     0;
+
+$btn_transition:                                      color $transition-s / 2 ease-in-out, background-color $transition-s / 2 ease-in-out, border-color $transition-s / 2 ease-in-out, box-shadow $transition-s / 2 ease-in-out;
+
+//=============================
+// Badge
+//=============================
+$badge_border_radius:                                 0;
+
+//=============================
+// Modals
+//=============================
+$modal_inner_padding:                                 1.526rem 0;
+$modal_dialog_margin:                                 1.526rem;
+
+$modal_content_bg:                    	              $modal_background_content_color;
+$modal_content_border_color:                          transparent;
+$modal_content_border_width:                          0;
+$modal_content_border_radius:                         0;
+
+$modal_backdrop_bg:                  	              $modal_background_color;
+$modal_backdrop_opacity:              	              1;
+$modal_header_border_color:                           transparent;
+$modal_header_border_width:                           0;
+$modal_footer_border_color:                           transparent;
+$modal_footer_border_width:                           0;
+
+$modal_header_padding_y:                              $header_padding_t;
+$modal_header_padding_x:                              0;
+$modal_header_padding:                                $header_padding_t 0 $header_padding_b 0;
+
+//=============================
+// Alert
+//=============================
+$alert_border_radius:                                 0;
+$alert_padding_y:                                     0.75rem;
+$alert_padding_x:                                     0.75rem;
+
+//=============================
+// List group
+//=============================
+$list_group_border_color:                             $body_border_color;
+$list_group_border_radius:                            0;
+
+$list_group_item_padding-y:                           $space_sm;
+$list_group_item_padding-x:                           $space_sm;
+
+//=============================
+// Close
+//=============================
+$close_color:                                         $body_links_color;
+
+//=============================
+// Forms
+//=============================
+$label_margin_bottom:                                 0;
+
+$input_padding_y:                                     1.421rem / 1.5;
+$input_padding_x:                                     1.316rem;
+$input_padding_y_sm:                                  1.421rem / 2.5;
+$input_padding_x_sm:                                  1.316rem;
+$input_padding_y_lg:                                  1.421rem;
+$input_padding_x_lg:                                  1.316rem;
+$input_font_size:                                     $f_size_df;
+$input_font_size_sm:                                  $f_size_sm;
+$input_font_size_lg:                                  $f_size_lg;
+$input_line_height:                                   1.63;
+$input_line_height_sm:                                1.63;
+$input_line_height_lg:                                1.63;
+
+$input_bg:                                            $input_background_secondary_color;
+
+$input_color:                                         $input_text_color;
+
+$input_border_color:                                  $input_border_secondary_color;
+$input_border_radius:                                 0;
+$input_border_radius_lg:                              0;
+$input_border_radius_sm:                              0;
+
+$input_focus_border_color:                            $input_border_focus_color;
+$input_focus_box_shadow:                              inherit;
+
+$input_height:                                        auto;
+$input_height_sm:                                     auto;
+$input_height_lg:                                     auto;
+
+$form_check_input_gutter:                             1.526rem;
+$form_check_input_margin_y:                           0;
+$form_check_input_margin_x:                           0.526rem;
+
+$form_group_margin_bottom:                            $space_lg;
+
+$custom_control_gutter:                               0.8rem;
+
+$custom_control_indicator_size:                       0.789rem;
+$custom_control_indicator_checked_bg:                 $body_main_element_primary_color;
+$custom_control_indicator_border_color:               $body_main_element_primary_color;
+
+$custom_checkbox_indicator_border_radius:             0;
+
+$custom_select_border_radius:                         0;
+$custom_select_focus_box_shadow:                      inherit;
+
+//=============================
+// Buttons + Forms
+//=============================
+$input_btn_focus_box_shadow:                          inherit;
+
+//=============================
+// Navs
+//=============================
+$nav_link_disabled_color:                             rgba($menu_links_color, $disabled_opacity);
+
+$nav_tabs_border_radius:                              0;
+$nav_tabs_link_active_color:                          $menu_links_active_color;
+
+$nav_pills_border_radius:                             0;
+
+//=============================
+// Dropdowns
+//=============================
+$dropdown_min_width:                                  12.105rem;
+$dropdown_padding_y:                                  0;
+$dropdown_spacer:                                     0;
+$dropdown_font_size:                                  0.789rem;
+$dropdown_color:                                      $dropdown_links_color;
+$dropdown_border_color:                               transparent;
+$dropdown_bg:                                         $dropdown_links_background_color;
+$dropdown_border_radius:                              0;
+$dropdown_border_width:                               0;
+$dropdown_divider_bg:                                 $body_border_color;
+$dropdown_divider_margin_y:                           0;
+
+$dropdown_link_color:                                 $dropdown_links_color;
+$dropdown_link_hover_color:                           $dropdown_links_hover_color;
+$dropdown_link_hover_bg:                              $dropdown_links_background_hover_color;
+
+$dropdown_link_active_color:                          $dropdown_links_active_color;
+$dropdown_link_active_bg:                             $dropdown_links_background_active_color;
+$dropdown_link_disabled_color:                        rgba($dropdown_links_color, $disabled_opacity);
+
+$dropdown_item_padding_y:                             0.789rem;
+$dropdown_item_padding_x:                             1.053rem;
+
+//=============================
+// Pagination
+//=============================
+$pagination_padding_x:                                0.953rem;
+$pagination_padding_y:                                0.632rem;
+
+$pagination_border_width:                             0;
+$pagination_border_color:                             transparent;
+
+$pagination_hover_border_color:                       transparent;
+
+$pagination_disabled_color:                           rgba($body_links_color, $disabled_opacity);
+
+//=============================
+// Card
+//=============================
+$card_spacer_y:                                       $space_sm;
+$card_spacer_x:                                       $space_sm;
+$card_cap_bg:                                         $card_background_color;
+$card_bg:                                             $card_background_color;
+$card_border_color:                                   $card_border_color;
+$card_border_radius:                                  0;
+$card_inner_border_radius:                            0;
+$card_img_overlay_padding:                            $space_sm;
+
+//=============================
+// Table
+//=============================
+$table_caption_color:                                 $body_text_primary_color;
+
+//=============================
+// Maps
+//=============================
+@function sqrt($r) {
+  $x0: 1;
+  $x1: $x0;
+  @for $i from 1 through 10 {
+    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+    $x0: $x1;
+  }
+  @return $x1;
+}
+
+$pinColor:                                           $map_pin_color;
+$pinWidth:                                           30px;
+$pinHeightFactor:                                    ((1 + sqrt(2)) / 2);
+$pinHeight:                                          $pinHeightFactor * $pinWidth;
+$shadowOpacity:                                      0.5;
+$shadow-size:                                        30px;
+$pulseSize:                                          40px;

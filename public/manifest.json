@@ -1,0 +1,25 @@
+{
+    "short_name": "Erso-reactjs",
+    "name": "Erso - Logistics & Transportation React JS Template",
+    "icons": [
+        {
+            "src": "assets/img/favicon/favicon-16x16.ico",
+            "sizes": "16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "assets/img/logo/logo-dark.svg",
+            "type": "image/svg",
+            "sizes": "87x87"
+        },
+        {
+            "src": "assets/img/logo/logo-light.svg",
+            "type": "image/svg",
+            "sizes": "87x87"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#707070",
+    "background_color": "#ffffff"
+}

@@ -1,0 +1,393 @@
+//=================================================
+// Typography
+//=================================================
+
+/*=============================
+// Headings
+=============================*/
+h1, h2, h3, h4, h5, h6 {
+    &:not([class*='-title']) {
+        color: $body_headline_color;
+    }
+
+    font-family: $DMS_b;
+    line-height: 1.31;
+    @include lhCrop-b(1.31, 0.75);
+    
+    &:last-child {
+        margin-bottom: 0;
+        @include lhCrop-a(1.31, 0.75);
+    }
+
+    &.after {
+        @include lhCrop-a(1.31, 0.75);
+    }
+
+    a {
+        color: $body_headline_color;
+    }
+
+    [class*='fa-'] {
+        color: $body_headline_icon_color;
+    }
+}
+
+h1, .h1-size, .h1 {
+    font-size: 4.211rem;
+    word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
+    margin-bottom: 0.316rem;
+}
+
+h2, .h2-size, .h2 {
+    font-size: 3.158rem;
+    margin-bottom: 0.579rem;
+}
+
+h3, .h3-size, .h3 {
+    font-size: 2.368rem;
+    margin-bottom: 0.842rem;
+}
+
+h4, .h4-size, .h4 {
+    font-size: 1.895rem;
+    margin-bottom: 1.105rem;
+}
+
+h5, .h5-size, .h5 {
+    font-size: 1.316rem;
+    margin-bottom: 1.316rem;
+}
+
+h6, .h6-size, .h6 {
+    font-size: 1rem;
+    margin-bottom: 1.316rem;
+}
+
+/*=============================
+// Paragraph
+=============================*/
+p {
+    line-height: 1.63;
+    font-size: 1rem;
+    margin-bottom: 0;
+    @include lhCrop-b(1.63, 0.80);
+
+    &:last-child {
+        @include lhCrop-a(1.63, 0.75);
+
+        &[class*="bg-"] {
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    &.before {
+        @include lhCrop-b(1.63, 0.80);
+    }
+
+    &.after {
+        @include lhCrop-a(1.63, 0.75)
+    }
+
+    &.no-before {
+        &:before {
+            display: none !important;
+        }
+    }
+
+    &.no-after {
+        &:after {
+            display: none !important;
+        }
+    }
+
+    &.p-small {
+        font-size: 0.789rem;
+    }
+    
+    &.p-large {
+        font-size: 1.316rem;
+    }
+}
+
+span {
+    &.s-small {
+        font-size: 0.789rem;
+    }
+    
+    &.p-large {
+        font-size: 1.316rem;
+    }
+}
+
+i {
+    &.i-small-xs {
+        font-size: 0.684rem;
+    }
+
+    &.i-small {
+        font-size: 0.789rem;
+    }
+
+    &.i-large {
+        font-size: 1.316rem;
+    }
+}
+
+.small, small {
+    line-height: 1.63;
+    @include lhCrop-b(1.63, 0.80);
+
+    &:last-child {
+        @include lhCrop-a(1.63, 0.75);
+    }
+}
+
+// Bold
+strong, b {
+    font-family: $font_primary_bold;
+}
+
+.site-main {
+    p {
+        margin-bottom: 1.316rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/*=============================
+// Blockquote
+=============================*/
+blockquote, .blockquote {
+    font-style: italic;
+    font-weight: bold;
+    border-left: 2px solid $body_main_element_primary_color;
+    padding-left: 1rem;
+    line-height: 1.63;
+    margin-bottom: $space_sm;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+    
+    p {
+        &:after, &:before {
+            display: none;
+        }
+        
+        &:last-child {
+            margin-bottom: 0;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+/*=============================
+// Lists
+=============================*/
+ul {
+    list-style: none;
+    margin-left: 1.3rem;
+    padding: 0;
+
+    li {
+        line-height: 1.23;
+        margin-bottom: 1.39rem;
+        @include lhCrop-b(1.23, 0.75);
+
+        &:last-child {
+            @include lhCrop-a(1.23, 0.75); 
+            margin-bottom: 0;
+        }
+
+        &:before {
+            content: "\025AA";
+            color: $body_main_element_primary_color;
+            width: 1rem;
+            margin-left: -1.3rem;
+        }
+    }
+    
+    ol, ul {
+        margin-top: 1.39rem;
+    }
+}
+
+ol {
+    margin-left: 0.94rem;
+    padding: 0;
+
+    li {
+        line-height: 1.23;
+        margin-bottom: 1.39rem;
+        @include lhCrop-b(1.23, 0.75);
+        margin-bottom: 1.39rem;
+        
+        &:last-child {
+            @include lhCrop-a(1.23, 0.75); 
+            margin-bottom: 0;
+        }
+        
+        ul {
+            > li {
+                &:before {
+                    content: "\2022";
+                }
+            }
+        }
+        
+        ol {
+            > li {
+                &:before {
+                    content: "";
+                }
+            }
+        }
+        
+        strong, p {
+            line-height: 1.23;
+        }
+        
+        p {
+            @include lhCrop-b(1.23, 0.75);
+            margin-top: 1.39rem;
+            margin-bottom: 1.39rem;
+            
+            &:first-child {
+                margin-top: 0;
+            }
+            
+            &:last-child {
+                @include lhCrop-a(1.23, 0.75);
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    ol, ul {
+        margin-top: 1.39rem;
+    }
+}
+
+// List unstyled
+.list-unstyled {
+    margin-left: 0;
+        
+    li {
+        @include lhCrop-a(1.23, 0.75); 
+        
+        &:before {
+            content: "";
+        }
+    }
+}
+
+.list-inline {
+    margin-left: 0;
+
+    .list-inline-item {
+        &:before {
+            content: "";
+        }
+    }
+}
+
+address, dl, ol, ul, pre {
+    margin-bottom: $space_sm;
+                
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+address, dl {
+    line-height: 1.75;
+    @include lhCrop-b(1.75, 0.75);
+    
+    &:last-child {
+        @include lhCrop-a(1.75, 0.75);
+    }
+}
+
+pre {
+    line-height: 1.75;
+}
+
+/*=============================
+// Emphasis
+=============================*/
+mark, .mark {
+    background-color: $body_mark_background;
+    padding: 0 0.2em;
+}
+
+/*=============================
+// Date
+=============================*/
+.date {
+    color: $body_date_color;
+}
+
+/*=============================
+// Text format
+=============================*/
+.regular {
+    font-family: $font_primary;
+}
+
+.bold {
+    font-family: $font_primary_bold;
+}
+
+/*=============================
+// Hr
+=============================*/
+hr {
+    margin-top: 0;
+    margin-bottom: $space_sm;
+                
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/*=============================
+// Pullquote
+=============================*/
+[class*="pullquote"] {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    
+    .blockquote, blockquote {
+        font-style: normal;
+        border: 0;
+        padding-left: 0;
+        
+        cite {
+            font-style: normal;
+        }
+    }
+}
+
+/*=============================
+// Caption
+=============================*/
+caption {
+    padding-bottom: 0;
+}
+
+/*=============================
+// Figcaption
+=============================*/
+figcaption {
+    margin-top: $space_xs;
+}

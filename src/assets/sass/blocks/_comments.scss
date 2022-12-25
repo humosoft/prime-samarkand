@@ -1,0 +1,91 @@
+//=================================================
+// Comments
+//=================================================
+
+#comments {
+    .comment-list {
+        margin-top: $space_lg;
+
+        .comment {
+            margin-bottom: $space_lg;
+        
+            &:before, &:after {
+                display: none;
+            }
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+            
+            .comment-header {
+                margin-bottom: $space_sm;
+                
+                .comment-author {
+                    margin-bottom: 1.053rem;
+                }
+
+                .comment-reply {
+                    i {
+                        margin-right: 0.526rem;
+                    }
+
+                    .comment-reply-link {
+                        color: $body_links_hover_color;
+
+                        &:hover {
+                            color: $body_links_color;
+                        }
+                    }
+                }
+            }
+
+            .comment-content {
+                .quote {
+                    @extend .text-secondary;
+                    margin-right: $space_sm / 2;
+                }
+            }
+            
+            .children {
+                margin-left: $space_lg;
+                
+                @media #{$media_xxl} {
+                    margin-left: 5.5rem;
+                }
+                
+                .comment {
+                    margin-top: $space_lg;
+                }
+            }
+        }
+
+        #respond {
+            margin-top: $space_lg;
+            margin-bottom: $space_lg;
+        }
+    }
+
+    // Comment respond
+    #respond {
+        .comment-reply-title {
+            color: $body_headline_color;
+        }
+
+        .comment-form {
+            .comment-notes, .logged-in-as {
+                @include lhCrop-b(1.75, 0.75);
+                @include lhCrop-a(1.75, 0.75);
+            }
+            
+            .comment-form-cookies-consent {
+                label {
+                    margin-bottom: 0;
+                }
+            }
+            
+            .form-submit {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

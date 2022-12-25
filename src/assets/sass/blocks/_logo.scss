@@ -1,0 +1,37 @@
+//=================================================
+// Logo
+//=================================================
+
+.loading {
+    .logo {
+        img {
+            width: 5.263rem;
+        }
+    }
+}
+
+header {
+    .logo {
+        img {
+            @media #{$media_xl} {
+                max-width: 5.263rem;
+            }
+        }
+    }
+}
+
+.modal {
+    .logo {
+        img {
+            max-width: 5.263rem;
+        }
+    }
+}
+
+footer {
+    .logo {
+        img {
+            width: 5.263rem;
+        }
+    }
+}

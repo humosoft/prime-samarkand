@@ -1,0 +1,270 @@
+//=================================================
+// Bootstrap styles rewrite
+//=================================================
+
+//=============================
+// Color system
+//=============================
+$colors: (
+    blue:                            	  $blue,
+    indigo:                           	  $indigo,
+    purple:                           	  $purple,
+    pink:                             	  $pink,
+    red:                              	  $red,
+    orange:                           	  $orange,
+    yellow:                           	  $yellow,
+    green:                            	  $green,
+    teal:                             	  $teal,
+    cyan:                             	  $cyan,
+    white:                            	  $white,
+    gray:                            	  $gray,
+    gray-dark:                        	  $gray-dark
+);
+
+$theme-colors: (
+    primary:                          	  $body_main_element_primary_color,
+    secondary:                        	  $body_main_element_secondary_color,
+    success:                          	  $green,
+    info:                             	  $cyan,
+    warning:                          	  $yellow,
+    danger:                               $red,
+    light:                            	  $light,
+    dark:                             	  $dark
+);
+
+//=============================
+// Embed
+//=============================
+$embed-responsive-aspect-ratios: (
+		(21 9),
+		(16 9),
+		(4 3),
+		(1 1),
+		(16 10)
+);
+
+//=============================
+// Components
+//=============================
+$border-color:                       	  $body_border_color;
+
+$border-radius:                      	  $border_radius;
+$border-radius-lg:                   	  $border_radius_lg;
+$border-radius-sm:                    	  $border_radius_sm;
+
+$caret-vertical-align:               	  $caret_vertical_align;
+$caret-spacing:                      	  $caret_spacing;
+
+//=============================
+// Typography
+//=============================
+$font-family-base:                    	  $font_family_base;
+
+$line-height-base:                    	  $line_height_base;
+$body-color:                         	  $body_color;
+
+$hr-border-color:                         $hr_border_color;
+
+//=============================
+// Links
+//=============================
+$link-color:                       	      $link_color;
+$link-hover-color:                  	  $link_hover_color;
+$link-hover-decoration:            	      $link_hover_decoration;
+
+//=============================
+// Buttons
+//=============================
+$btn-font-family:                    	  $btn_font_family;
+
+$btn-padding-y:                       	  $btn_padding_y;
+$btn-padding-x:                    	      $btn_padding_x;
+$btn-padding-y-sm:                 		  $btn_padding_y_sm;
+$btn-padding-x-sm:                  	  $btn_padding_x_sm;
+$btn-padding-y-lg:                  	  $btn_padding_y_lg;
+$btn-padding-x-lg:                  	  $btn_padding_x_lg;
+
+$btn-font-size:                     	  $btn_font_size;
+$btn-font-size-sm:                 	      $btn_font_size_sm;
+$btn-font-size-lg:                  	  $btn_font_size_lg;
+
+$btn-line-height:                   	  $btn_line_height;
+$btn-line-height-sm:                 	  $btn_line_height_sm;
+$btn-line-height-lg:                	  $btn_line_height_lg;
+
+$btn-border-radius:               	      $btn_border_radius;
+$btn-border-radius-sm:              	  $btn_border_radius_sm;
+$btn-border-radius-lg:               	  $btn_border_radius_lg;
+$btn-focus-width:                   	  $btn_focus_width;
+
+$btn-transition:                      	  $btn_transition;
+
+//=============================
+// Badge
+//=============================
+$badge-border-radius:                 	  $badge_border_radius;
+
+//=============================
+// Modals
+//=============================
+$modal-inner-padding:                     $modal_inner_padding;
+$modal-dialog-margin:                     $modal_dialog_margin;
+
+$modal-content-bg:                    	  $modal_content_bg;
+$modal-content-border-color:              $modal_content_border_color;
+$modal-content-border-width:              $modal_content_border_width;
+$modal-content-border-radius:             $modal_content_border_radius;
+
+$modal-backdrop-bg:                  	  $modal_backdrop_bg;
+$modal-backdrop-opacity:              	  $modal_backdrop_opacity;
+$modal-header-border-color:               $modal_header_border_color;
+$modal-header-border-width:               $modal_header_border_width;
+$modal-footer-border-color:               $modal_footer_border_color;
+$modal-footer-border-width:               $modal_footer_border_width;
+
+$modal-header-padding-y:                  $modal_header_padding_y;
+$modal-header-padding-x:                  $modal_header_padding_x;
+$modal-header-padding:                    $modal_header_padding;
+
+//=============================
+// Alert
+//=============================
+$alert-border-radius:                 	  $alert_border_radius;
+$alert-padding-y:                     	  $alert_padding_y;
+$alert-padding-x:                     	  $alert_padding_x;
+
+//=============================
+// List group
+//=============================
+$list-group-border-color:             	  $list_group_border_color;
+$list-group-border-radius:                $list_group_border_radius;
+
+$list-group-item-padding-x:           	  $list_group_item_padding-x;
+$list-group-item-padding-y:         	  $list_group_item_padding-y;
+
+//=============================
+// Close
+//=============================
+$close-color:                             $close_color;
+
+//=============================
+// Forms
+//=============================
+$label-margin-bottom:                 	  $label_margin_bottom;
+
+$input-padding-y:                   	  $input_padding_y;
+$input-padding-x:                  	      $input_padding_x;
+$input-padding-y-sm:                      $input_padding_y_sm;
+$input-padding-x-sm:                      $input_padding_x_sm;
+$input-padding-y-lg:                      $input_padding_y_lg;
+$input-padding-x-lg:                      $input_padding_x_lg;
+$input-font-size:                    	  $input_font_size;
+$input-font-size-sm:                      $input_font_size_sm;
+$input-font-size-lg:                      $input_font_size_lg;
+$input-line-height:                   	  $input_line_height;
+$input-line-height-sm:                    $input_line_height_sm;
+$input-line-height-lg:                    $input_line_height_lg;
+
+$input-bg:                            	  $input_bg;
+
+$input-color:                        	  $input_color;
+
+$input-border-color:               	      $input_border_color;
+$input-border-radius:                	  $input_border_radius;
+$input-border-radius-lg:                  $input_border_radius_lg;
+$input-border-radius-sm:                  $input_border_radius_sm;
+
+$input-focus-border-color:           	  $input_border_focus_color;
+$input-focus-box-shadow:              	  $input_focus_box_shadow;
+
+$input-height:                            $input_height;
+$input-height_sm:                         $input_height_sm;
+$input-height_lg:                         $input_height_lg;
+
+$form-check-input-gutter:             	  $form_check_input_gutter;
+$form-check-input-margin-y:           	  $form_check_input_margin_y;
+$form-check-input-margin-x:               $form_check_input_margin_x;
+
+$form-group-margin-bottom:            	  $form_group_margin_bottom;
+
+$custom-control-gutter:                   $custom_control_gutter;
+
+$custom-control-indicator-size:           $custom_control_indicator_size;
+$custom-control-indicator-checked-bg:     $custom_control_indicator_checked_bg;
+$custom-control-indicator-border-color:   $custom_control_indicator_border_color;
+
+$custom-checkbox-indicator-border-radius: $custom_checkbox_indicator_border_radius;
+
+$custom-select-border-radius:             $custom_select_border_radius;
+$custom-select-focus-box-shadow:          $custom_select_focus_box_shadow;
+
+//=============================
+// Buttons + Forms
+//=============================
+$input-btn-focus-box-shadow:          	  $input_btn_focus_box_shadow;
+
+//=============================
+// Navs
+//=============================
+$nav-link-disabled-color:             	  $nav_link_disabled_color;
+
+$nav-tabs-border-radius:              	  $nav_tabs_border_radius;
+$nav-tabs-link-active-color:              $nav_tabs_link_active_color;
+
+$nav-pills-border-radius:             	  $nav_pills_border_radius;
+
+//=============================
+// Dropdowns
+//=============================
+$dropdown-min-width:                  	  $dropdown_min_width;
+$dropdown-padding-y:                  	  $dropdown_padding_y;
+$dropdown-spacer:                     	  $dropdown_spacer;
+$dropdown-font-size:                  	  $dropdown_font_size;
+$dropdown-color:                          $dropdown_color;
+$dropdown-border-color:              	  $dropdown_border_color;
+$dropdown-bg:                        	  $dropdown_bg;
+$dropdown-border-radius:           	      $dropdown_border_radius;
+$dropdown-border-width:             	  $dropdown_border_width;
+$dropdown-divider-bg:           	      $dropdown_divider_bg;
+$dropdown-divider-margin-y:    		      $dropdown_divider_margin_y;
+
+$dropdown-link-color:              	      $dropdown_link_color;
+$dropdown-link-hover-color:       	      $dropdown_link_hover_color;
+$dropdown-link-hover-bg:          	      $dropdown_link_hover_bg;
+
+$dropdown-link-active-color:       	      $dropdown_link_active_color;
+$dropdown-link-active-bg:          		  $dropdown_link_active_bg;
+$dropdown-link-disabled-color:      	  $dropdown_link_disabled_color;
+
+$dropdown-item-padding-y:            	  $dropdown_item_padding_y;
+$dropdown-item-padding-x:           	  $dropdown_item_padding_x;
+
+//=============================
+// Pagination
+//=============================
+$pagination-padding-x:              	  $pagination_padding_x;
+$pagination-padding-y:             	      $pagination_padding_y;
+
+$pagination-border-width:                 $pagination_border_width;
+$pagination-border-color:           	  $pagination_border_color;
+
+$pagination-hover-border-color:     	  $pagination_hover_border_color;
+
+$pagination-disabled-color:               $pagination_disabled_color;
+
+//=============================
+// Cards
+//=============================
+$card-spacer-y:                           $card_spacer_y;
+$card-spacer-x:                      	  $card_spacer_x;
+$card-cap-bg:                             $card_cap_bg;
+$card-bg:                            	  $card_bg;
+$card-border-color:                  	  $card_border_color;
+$card-border-radius:                 	  $card_border_radius;
+$card-inner-border-radius:          	  $card_inner_border_radius;
+$card-img-overlay-padding:                $card_img_overlay_padding;
+
+//=============================
+// Table
+//=============================
+$table-caption-color:                	  $table_caption_color;

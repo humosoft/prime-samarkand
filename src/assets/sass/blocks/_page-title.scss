@@ -1,0 +1,81 @@
+//=================================================
+// Page title
+//=================================================
+
+#page-title {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 22.789rem;
+
+    // Typography color
+    h1, h2, h3, h4, h5, h6, p, a {
+        color: $body_text_tertiary_color;
+
+        @media #{$media_lg} {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    h1 {
+        @media #{$media_lg} {
+            font-size: 3rem; // H2 - 0.158rem
+        }
+    }
+
+    .wrapper {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.page-title-bg-color {
+    background-color: $body_main_element_primary_color;
+    position: absolute;
+    opacity: 0.77;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+/*=============================
+// Home page
+=============================*/
+.home {
+    #page-title {
+        height: 100vh;
+        min-height: 550px;
+        max-height: 860px;
+    }
+}
+
+/*=============================
+// Search results page
+=============================*/
+.search-results {
+    #page-title {
+        padding-top: $space_xl - 1.684rem;
+        height: auto;
+
+        h1, h2, h3, h4, h5, h6, p, a {
+            color: $body_text_secondary_color;
+        }
+    }
+}
+
+/*=============================
+// 404 page
+=============================*/
+.error404 {
+    #page-title {
+        padding-top: $space_xl - 1.684rem;
+        height: auto;
+
+        h1, h2, h3, h4, h5, h6, p, a {
+            color: $body_text_secondary_color;
+        }
+    }
+}

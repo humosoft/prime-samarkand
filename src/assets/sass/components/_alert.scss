@@ -1,0 +1,49 @@
+//=================================================
+// Alert
+//=================================================
+
+.alert {
+    @extend .style-default;
+}
+
+[class*='alert-dismiss'] {
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    padding: 3px;
+    font-size: 20px;
+    line-height: 1;
+    background: transparent;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+// Contact form
+[class*='response-output'] {
+    @extend .alert;
+    display: block !important;
+    position: absolute;
+    border: 1px solid transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 0.789rem;
+}
+
+[class*='validation-errors'], 
+[class*='acceptance-missing'] {
+    @extend .alert-danger;
+    border-color: #fac9d0 !important;
+}
+
+[class*='mail-sent-ok'] {
+    @extend .alert-success;
+    border-color: #d3f2da !important;
+}
+
+[class*='validation-errors'],
+[class*='acceptance-missing'],
+[class*='mail-sent-ok'] {
+    margin-top: $space_lg !important;
+    padding: .75rem 1.25rem !important;
+}

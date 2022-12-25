@@ -1,0 +1,49 @@
+//=================================================
+// Maps
+//=================================================
+
+.maps {
+    position: relative;
+
+    .maps-information {
+        position: absolute;
+        top: 50%;
+        @include transform(translateY(-50%));
+
+        background: $map_information_background_color;
+        color: $map_information_color;
+        width: 23.684rem;
+        margin-left: 6.947rem;
+        max-height: 23.632rem;
+
+        @media #{$media_xl} {
+            margin-left: $space_xl / 3;
+        }
+
+        @media #{$media_lg} {
+            position: static;
+            @include transform(translateY(0));
+            margin-top: 2.105rem;
+            margin-bottom: 3.158rem;
+            margin-left: 0;
+            width: 100%;
+            max-height: 100%;
+        }
+
+        h1, h2, h3, h4, h5, h6, p {
+            color: $map_information_color;
+        }
+
+        a {
+            color: $map_information_color;
+
+            &:hover {
+                color: $body_links_hover_color;
+            }
+        }
+    }
+}
+
+#google-maps {
+    height: 29.947rem;
+}

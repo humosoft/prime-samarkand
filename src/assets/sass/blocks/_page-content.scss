@@ -1,0 +1,152 @@
+//=================================================
+// Page content
+//=================================================
+
+#page-content {
+    .content {
+        h1 {
+            margin-bottom: 1.895rem;
+        }
+
+        h2 {
+            margin-bottom: 2.158rem;
+        }
+
+        h3 {
+            margin-bottom: 2.105rem;
+        }
+
+        h4 {
+            margin-bottom: 2.263rem;
+        }
+
+        h5 {
+            margin-bottom: 2.579rem;
+        }
+
+        h6 {
+            margin-bottom: 2.737rem;
+        }
+
+        p {
+            margin-bottom: 2.632rem;
+        }
+
+        h3, h4, h5, h6 {
+            line-height: 1.63;
+            @include lhCrop-b(1.63, 0.75);
+
+            &:last-child {
+                @include lhCrop-a(1.63, 0.75);
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6, p {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        > [class*='-block-'] {
+            margin-bottom: $space_lg + 0.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        figure {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: $space_lg;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        address, dl, ol, ul, pre, hr, blockquote, .blockquote {
+            margin-bottom: $space_lg;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        // Style default from typography.scss
+        .style-default {
+            h1 {
+                margin-bottom: 0.316rem;
+            }
+
+            h2 {
+                margin-bottom: 0.579rem;
+            }
+
+            h3 {
+                margin-bottom: 0.842rem;
+            }
+
+            h4 {
+                margin-bottom: 1.105rem;
+            }
+
+            h5 {
+                margin-bottom: 1.316rem;
+            }
+
+            h6 {
+                margin-bottom: 1.316rem;
+            }
+
+            p {
+                margin-bottom: 1.316rem;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                line-height: 1.31;
+                @include lhCrop-b(1.31, 0.75);
+
+                &:last-child {
+                    @include lhCrop-a(1.31, 0.75);
+                }
+            }
+
+            h1, h2, h3, h4, h5, h6, p {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            > [class*='-block-'] {
+                margin-bottom: $space_sm + 0.5rem;
+            }
+
+            table {
+                margin-bottom: $space_sm;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            address, dl, ol, ul, pre, hr, blockquote, .blockquote {
+                margin-bottom: $space_sm;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

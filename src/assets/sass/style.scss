@@ -1,0 +1,661 @@
+/*=================================================
+// Style
+// 
+// @package erso
+// @author Adveits <support@adveits.com>
+// @version 1.0.0
+=================================================*/
+
+//=================================================
+// Theme variables
+//=================================================
+// Variables
+@import "variables";
+
+// Bootstrap style rewrite
+@import "bootstrap-style-rewrite";
+
+//=================================================
+// Theme mixins
+//=================================================
+// Mixins
+@import "mixins";
+
+/*=================================================
+// Table of contents
+//
+// #1 Icons import ( FontAwesome )
+//
+// #2 Bootstrap settings
+// #2.1 Style Reboot
+// #2.2 Images
+// #2.3 Code
+// #2.4 Grid
+// #2.5 Forms
+// #2.6 Buttons
+// #2.7 Transitions
+// #2.8 Dropdown
+// #2.9 Button group
+// #2.10 Input group
+// #2.11 Custom forms
+// #2.12 Card
+// #2.13 Alert
+// #2.14 List group
+// #2.15 Close
+// #2.16 Modal
+// #2.17 Utilities
+// #2.18 Pagination
+// #2.19 Type
+// #2.20 Nav
+// #2.21 Tables
+// #2.22 Badge
+// #2.23 Media
+//
+// #3 Theme default style
+// #3.1 Font
+//
+// #4 Theme content
+// #4.1 Typography
+// #4.2 Image
+// #4.3 Icon
+// #4.4 Tables
+//
+// #5 Theme utilities
+// #5.1 Background
+// #5.2 Spacing
+// #5.3 Sizing
+// #5.4 Iframe
+//
+// #6 Theme layout
+// #6.1 Grid
+//
+// #7 Theme components
+// #7.1 Link
+// #7.2 Button
+// #7.3 Modal
+// #7.4 Forms
+// #7.5 Nav
+// #7.6 Card
+// #7.7 Sticky
+// #7.8 Transition
+// #7.9 Transform
+// #7.10 Pagination
+// #7.11 Alert
+// #7.12 Effects
+// #7.13 Carousel
+// #7.14 Collapse
+// #7.15 Dropdown
+// #7.16 List group
+// #7.17 Scrollbar
+// #7.18 Popup
+//
+// #8 Theme blocks
+// #8.1 Block
+// #8.2 Logo
+// #8.3 Header
+// #8.4 Footer
+// #8.5 Main
+// #8.6 Page title
+// #8.7 Page content
+// #8.8 Blog
+// #8.9 Gallery
+// #8.10 Widget
+// #8.11 Comments
+// #8.12 Loading
+// #8.13 Browser
+// #8.14 About
+// #8.15 Single
+// #8.16 Contacts
+// #8.17 404
+// #8.18 Examples
+// #8.19 FAQ
+// #8.20 Services
+// #8.21 Reviews
+// #8.22 Clients
+// #8.23 Maps
+// #8.24 Back
+// #8.25 Languages
+//
+// #9 Animate
+//
+// #10 Slider
+=================================================*/
+
+/*=================================================
+// #1 Icons import ( FontAwesome )
+=================================================*/
+@import "fontawesome/fontawesome";
+@import "fontawesome/regular";
+@import "fontawesome/brands";
+@import "fontawesome/solid";
+
+/*=================================================
+// #2 Bootstrap settings
+=================================================*/
+/*=============================
+// #2.1 Style reboot
+=============================*/
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/reboot";
+
+/*=============================
+// #2.2 Images
+=============================*/
+@import "../../../node_modules/bootstrap/scss/images";
+
+/*=============================
+// #2.3 Code
+=============================*/
+@import "../../../node_modules/bootstrap/scss/code";
+
+/*=============================
+// #2.4 Grid
+=============================*/
+@import "../../../node_modules/bootstrap/scss/grid";
+
+/*=============================
+// #2.5 Forms
+=============================*/
+@import "../../../node_modules/bootstrap/scss/forms";
+
+/*=============================
+// #2.6 Buttons
+=============================*/
+@import "../../../node_modules/bootstrap/scss/buttons";
+
+/*=============================
+// #2.7 Transitions
+=============================*/
+@import "../../../node_modules/bootstrap/scss/transitions";
+
+/*=============================
+// #2.8 Dropdown
+=============================*/
+@import "../../../node_modules/bootstrap/scss/dropdown";
+
+/*=============================
+// #2.9 Button group
+=============================*/
+@import "../../../node_modules/bootstrap/scss/button-group";
+
+/*=============================
+// #2.10 Input group
+=============================*/
+@import "../../../node_modules/bootstrap/scss/input-group";
+
+/*=============================
+// #2.11 Custom forms
+=============================*/
+@import "../../../node_modules/bootstrap/scss/custom-forms";
+
+/*=============================
+// #2.12 Card
+=============================*/
+@import "../../../node_modules/bootstrap/scss/card";
+
+/*=============================
+// #2.13 Alert
+=============================*/
+@import "../../../node_modules/bootstrap/scss/alert";
+
+/*=============================
+// #2.14 List group
+=============================*/
+@import "../../../node_modules/bootstrap/scss/list-group";
+
+/*=============================
+// #2.15 Close
+=============================*/
+@import "../../../node_modules/bootstrap/scss/close";
+
+/*=============================
+// #2.16 Modal
+=============================*/
+@import "../../../node_modules/bootstrap/scss/modal";
+
+/*=============================
+// #2.17 Utilities
+=============================*/
+@import "../../../node_modules/bootstrap/scss/utilities";
+
+/*=============================
+// #2.18 Pagination
+=============================*/
+@import "../../../node_modules/bootstrap/scss/pagination";
+
+/*=============================
+// #2.19 Type
+=============================*/
+@import "../../../node_modules/bootstrap/scss/type";
+
+/*=============================
+// #2.20 Nav
+=============================*/
+@import "../../../node_modules/bootstrap/scss/nav";
+
+/*=============================
+// #2.21 Tables
+=============================*/
+@import "../../../node_modules/bootstrap/scss/tables";
+
+/*=============================
+// #2.22 Badge
+=============================*/
+@import "../../../node_modules/bootstrap/scss/badge";
+
+/*=============================
+// #2.23 Media
+=============================*/
+@import "../../../node_modules/bootstrap/scss/media";
+
+/*=================================================
+// #3 Theme default style
+=================================================*/
+html {
+    -webkit-overflow-scrolling: touch;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 19px;
+    scroll-behavior: smooth;
+    
+    @media #{$media_xl} {
+        font-size: 16px;
+    }
+    
+    @media #{$media_sm} {
+        font-size: 14px;
+    }
+}
+
+body {
+    background-color: $body_background_color;
+    font-size: 19px;
+    min-width: 320px;
+    
+    @media #{$media_xl} {
+        font-size: 16px;
+    }
+    
+    @media #{$media_sm} {
+        font-size: 14px;
+    }
+}
+
+::selection {
+    background: $body_main_element_primary_color;
+    color: $white;
+}
+
+.wrapper,
+[class*='content-full-width'] [class*='section-boxed'] > [class*='-container'] {
+    max-width: $wrapper_max_w;
+    margin: auto;
+    padding-left: $wrapper_p_l;
+    padding-right: $wrapper_p_r;
+
+    @media #{$media_xxl} {
+        padding-left: $wrapper_p_l_xxl;
+        padding-right: $wrapper_p_r_xxl;
+    }
+
+    @media #{$media_xl} {
+        padding-left: $wrapper_p_l_xl;
+        padding-right: $wrapper_p_r_xl;
+    }
+
+    @media #{$media_sm} {
+        padding-left: $wrapper_p_l_sm;
+        padding-right: $wrapper_p_r_sm;
+    }
+}
+
+/*=============================
+// #3.1 Font
+=============================*/
+@import "font";
+
+/*=================================================
+// #4 Theme content
+=================================================*/
+/*=============================
+// #4.1 Typography
+=============================*/
+@import "content/typography";
+
+/*=============================
+// #4.2 Image
+=============================*/
+@import "content/image";
+
+/*=============================
+// #4.3 Icon
+=============================*/
+@import "content/icon";
+
+/*=============================
+// #4.4 Tables
+=============================*/
+@import "content/tables";
+
+/*=================================================
+// #5 Theme utilities
+=================================================*/
+/*=============================
+// #5.1 Background
+=============================*/
+@import "utilities/background";
+
+/*=============================
+// #5.2 Spacing
+=============================*/
+@import "utilities/spacing";
+
+/*=============================
+// #5.3 Sizing
+=============================*/
+@import "utilities/sizing";
+
+/*=============================
+// #5.4 Iframe
+=============================*/
+@import "utilities/iframe";
+
+/*=================================================
+// #6 Theme layout
+=================================================*/
+/*=============================
+// #6.1 Grid
+=============================*/
+@import "layout/grid";
+
+/*=================================================
+// #7 Theme components
+=================================================*/
+/*=============================
+// #7.1 Link
+=============================*/
+@import "components/link";
+
+/*=============================
+// #7.2 Button
+=============================*/
+@import "components/button";
+
+/*=============================
+// #7.3 Modal
+=============================*/
+@import "components/modal";
+
+/*=============================
+// #7.4 Forms
+=============================*/
+@import "components/forms";
+
+/*=============================
+// #7.5 Nav
+=============================*/
+@import "components/nav";
+
+/*=============================
+// #7.6 Card
+=============================*/
+@import "components/card";
+
+/*=============================
+// #7.7 Sticky
+=============================*/
+@import "components/sticky";
+
+/*=============================
+// #7.8 Transition
+=============================*/
+@import "components/transition";
+
+/*=============================
+// #7.9 Transform
+=============================*/
+@import "components/transform";
+
+/*=============================
+// #7.10 Pagination
+=============================*/
+@import "components/pagination";
+
+/*=============================
+// #7.11 Alert
+=============================*/
+@import "components/alert";
+
+/*=============================
+// #7.12 Effects
+=============================*/
+@import "components/effects";
+
+/*=============================
+// #7.13 Carousel
+=============================*/
+@import "components/carousel";
+
+/*=============================
+// #7.14 Collapse
+=============================*/
+@import "components/collapse";
+
+/*=============================
+// #7.15 Dropdown
+=============================*/
+@import "components/dropdown";
+
+/*=============================
+// #7.16 List group
+=============================*/
+@import "components/list-group";
+
+/*=============================
+// #7.17 Scrollbar
+=============================*/
+@import "components/scrollbar";
+
+/*=============================
+// #7.18 Pop-Up
+=============================*/
+@import "components/popup";
+
+/*=================================================
+// #8 Theme blocks
+=================================================*/
+/*=============================
+// #8.1 Block
+=============================*/
+@import "blocks/block";
+
+/*=============================
+// #8.2 Logo
+=============================*/
+@import "blocks/logo";
+
+/*=============================
+// #8.3 Header
+=============================*/
+@import "blocks/header";
+
+/*=============================
+// #8.4 Footer
+=============================*/
+@import "blocks/footer";
+
+/*=============================
+// #8.5 Main
+=============================*/
+@import "blocks/main";
+
+/*=============================
+// #8.6 Page title
+=============================*/
+@import "blocks/page-title";
+
+/*=============================
+// #8.7 Page content
+=============================*/
+@import "blocks/page-content";
+
+/*=============================
+// #8.8 Blog
+=============================*/
+@import "blocks/blog";
+
+/*=============================
+// #8.9 Gallery
+=============================*/
+@import "blocks/gallery";
+
+/*=============================
+// #8.10 Widget
+=============================*/
+@import "blocks/widget";
+
+/*=============================
+// #8.11 Comments
+=============================*/
+@import "blocks/comments";
+
+/*=============================
+// #8.12 Loading
+=============================*/
+@import "blocks/loading";
+
+/*=============================
+// #8.13 Browser
+=============================*/
+@import "blocks/browser";
+
+/*=============================
+// #8.14 About
+=============================*/
+@import "blocks/about";
+
+/*=============================
+// #8.15 Single
+=============================*/
+@import "blocks/single";
+
+/*=============================
+// #8.16 Contacts
+=============================*/
+@import "blocks/contacts";
+
+/*=============================
+// #8.17 404
+=============================*/
+@import "blocks/404";
+
+/*=============================
+// #8.18 Examples
+=============================*/
+@import "blocks/examples";
+
+/*=============================
+// #8.19 FAQ
+=============================*/
+@import "blocks/faq";
+
+/*=============================
+// #8.20 Services
+=============================*/
+@import "blocks/services";
+
+/*=============================
+// #8.21 Reviews
+=============================*/
+@import "blocks/reviews";
+
+/*=============================
+// #8.22 Clients
+=============================*/
+@import "blocks/clients";
+
+/*=============================
+// #8.23 Maps
+=============================*/
+@import "blocks/maps";
+
+/*=============================
+// #8.24 Back
+=============================*/
+@import "blocks/back";
+
+/*=============================
+// #8.25 Languages
+=============================*/
+@import "blocks/lang";
+
+/*=================================================
+// #9 Animate
+=================================================*/
+@import "../../../node_modules/animate.css/animate";
+
+/*=================================================
+// #10 Slider
+=================================================*/
+@import "../../../node_modules/swiper/swiper";
+
+//=================================================
+// DEV
+//=================================================
+//.bg-line {
+//    background-image: url(../img/bg/dev.svg);
+//    background-repeat: no-repeat;
+//    background-position: center;
+//}
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 4px solid #000;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    4.9% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    5% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+  

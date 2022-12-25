@@ -1,0 +1,117 @@
+//=================================================
+// Iframe
+//=================================================
+
+iframe {
+    width: 100%;
+}
+
+.embed {
+    position: relative;
+
+    .embed-image-overlay {
+        overflow: hidden;
+
+        .embed-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+            z-index: 99;
+
+            p {
+                margin-top: $space_sm;
+                color: $body_text_tertiary_color;
+            }
+
+            .embed-play {
+                position: relative;
+                margin: auto;
+                width: 6.105rem;
+                height: 6.105rem;
+                border-radius: 50%;
+                color: $embed_play_color;
+                background-color: $embed_play_background_color;
+                cursor: pointer;
+                @extend .transition-all;
+
+                @media #{$media_sm} {
+                    width: 4.070rem;
+                    height: 4.070rem;
+                }
+
+                [class*='fa-'] {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    @include transform(translate(-50%, -50%));
+                }
+
+                &:before {
+                    content: '';
+                    border: 0.526rem solid rgba(151, 151, 151, 0.11);
+                    border-radius: 50%;
+                    width: 7.158rem;
+                    height: 7.158rem;
+                    position: absolute;
+                    top: -0.526rem;
+                    left: -0.526rem;
+                    animation: ripple 2s linear 1s infinite;
+
+                    @media #{$media_sm} {
+                        border: 0.350rem solid rgba(151, 151, 151, 0.11);
+                        width: 4.772rem;
+                        height: 4.772rem;
+                        top: -0.350rem;
+                        left: -0.350rem;
+                    }
+                }
+            }
+        }
+
+        .embed-image {
+            width: 100%;
+            height: 100%;
+            top: 0;
+
+            transform: perspective(1px) scale(1) translateZ(0);
+            backface-visibility: hidden;
+            @extend .transition-all;
+        }
+
+        .embed-bg {
+            background-color: $body_main_element_primary_color;
+            position: absolute;
+            opacity: 0.86;
+            width: 100%;
+            height: 100%;
+            top: 0;
+        }
+
+        .embed-click {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+            z-index: 99;
+            width: 100%;
+            height: 100%;
+
+            &:hover, &:focus {
+                .embed-center {
+                    .embed-play {
+                        background-color: $embed_play_background_hover_color;
+                        color: $embed_play_hover_color;
+                        @extend .transition-all;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .embed-image {
+                transform: perspective(1px) scale(1.1) translateZ(0);
+            }
+        }
+    }
+}

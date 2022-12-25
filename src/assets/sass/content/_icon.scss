@@ -1,0 +1,146 @@
+//=================================================
+// Icons
+//=================================================
+
+.fas {
+    &.fas-space-l {
+        padding-left: 0.526rem;
+    }
+
+    &.fas-space-r {
+        padding-right: 0.526rem;
+    }
+}
+
+.search {
+    .fas {
+        &.fa-search {
+            font-size: 1.053rem;
+        }
+    }
+}
+
+/*=============================
+// Close
+=============================*/
+.close {
+    opacity: 1;
+    @extend .transition-all;
+
+    span {
+        @include lhCrop-b(1, 0.55);
+        @include lhCrop-a(1, 0.55);
+    }
+
+    &:hover {
+        color: $body_links_hover_color;
+        @extend .transition-all;
+    }
+
+    &:not(:disabled):not(.disabled) {
+        &:hover, &:focus {
+            opacity: 1;
+        }
+    }
+}
+
+/*=============================
+// Pin
+=============================*/
+.adv-pin {
+    .pin-wrap {
+        position: absolute;
+        width: $pinWidth;
+        height: $pinWidth;
+        margin-top: -$pinHeight;
+        margin-left: -$pinWidth/2;
+        transform-origin: 50% ($pinHeightFactor * 100%) 0;
+    }
+
+    .pin {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $pinWidth;
+        height: $pinWidth;
+        margin-top: -$pinWidth / 2;
+        margin-left: -$pinWidth / 2;
+        transform-origin: 50% ($pinHeightFactor * 100%) 0;
+
+        &:after {
+            position: absolute;
+            display: block;
+            box-sizing: border-box;
+            width: $pinWidth;
+            height: $pinWidth;
+            content: '';
+            transform: rotateZ(-45deg);
+            border: 7px solid $pinColor;
+            border-radius: 50% 50% 50% 50%;
+        }
+
+        &:before {
+            position: absolute;
+            display: block;
+            box-sizing: border-box;
+            width: $pinWidth;
+            height: $pinWidth;
+            content: '';
+            transform: rotateZ(-45deg);
+            border: 7px solid $pinColor;
+            border-radius: 50% 50% 50% 0;
+        }
+    }
+
+    .shadow {
+        position: absolute;
+
+        &:before {
+            position: absolute;
+            left: -100px - $shadow-size/2;
+            display: block;
+            width: $shadow-size;
+            height: $shadow-size;
+            margin-top: -$shadow-size/2;
+            content: '';
+            transform: rotateX(55deg);
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, $shadowOpacity) 100px 0 20px;
+        }
+    }
+
+    .pulse {
+        position: absolute;
+        margin-top: -$pulseSize / 2;
+        margin-left: -$pulseSize / 2;
+        transform: rotateX(55deg);
+
+        &:after {
+            display: block;
+            width: $pulseSize;
+            height: $pulseSize;
+            content: '';
+            animation: pulsate 1s ease-out;
+            animation-delay: 1.1s;
+            animation-iteration-count: infinite;
+            opacity: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 1px 2px rgba(0, 0, 0, $shadowOpacity);
+            box-shadow: 0 0 6px 3px rgba($pinColor, 1.0);
+        }
+    }
+
+    @keyframes pulsate {
+        0% {
+            transform: scale(.1, .1);
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1.2, 1.2);
+            opacity: 0;
+        }
+    }
+}
