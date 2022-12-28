@@ -1,41 +1,72 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { TranslationContext } from "../../context/TranslationContext";
 
-import NewsHomeItemsData from '../../data/news/newsHomeItems';
+import NewsHomeItemsData from "../../data/news/newsHomeItems";
+import { SERVER_URL } from "../../helpers/constants";
+import useAxios from "../../hooks/useAxios";
 
 const NewsHome = () => {
-    return (
-        <div className="row gutter-width-md with-pb-lg">
-            { NewsHomeItemsData && NewsHomeItemsData.map( ( item, key ) => {
-                return (
-                    <div key={ key } className="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                        <div className="card card-post">
-                            <div className="card-top position-relative">
-                                <a title={ item.title } href={  item.link }>
-                                    <div className="img object-fit overflow-hidden">
-                                        <div className="object-fit-cover transform-scale-h">
-                                            <img className="card-top-img" src={ item.imgLink } alt={ item.title } />
+  const { lang } = useContext(TranslationContext);
+  //it actually fetches home page data, it was mistake in backend
+  //omg this generated newss??
+  const { response } = useAxios({
+    endpoint: "/newss",
+    params: {
+      locale: lang,
+      pagination: {
+        pageSize: 3,
+      },
+      populate: "image,tags",
+    },
+  });
 
-                                            <div className="img-bg-color"></div>
-                                        </div>
-                                    </div>
-                                </a>
+  return (
+    <div className="row gutter-width-md with-pb-lg">
+      {response?.data?.data?.length > 0 &&
+        response?.data?.data?.map((news) => (
+          <div
+            key={news.id}
+            className="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+            <div className="card card-post">
+              <div className="card-top position-relative">
+                <Link
+                  title={news.attributes.title}
+                  to={`/news/${news.attributes.id}`}>
+                  <div className="img object-fit overflow-hidden">
+                    <div className="object-fit-cover transform-scale-h">
+                      <img
+                        className="card-top-img"
+                        src={`${SERVER_URL}${news.attributes.image?.data?.attributes.url}`}
+                        alt={news.attributes.title}
+                      />
 
-                                <div className="card-category">
-                                    <a title={ item.categoryTitle } className="btn btn-sm btn-secondary transform-scale-h border-0" href={ `${  item.categoryLink }` }>{ item.categoryTitle }</a>
-                                </div>
-                            </div>
-
-                            <div className="card-body">
-                                <h5 className="card-title">
-                                    <a title={ item.title } href={  item.link }>{ item.title }</a>
-                                </h5>
-                            </div>
-                        </div>
+                      <div className="img-bg-color"></div>
                     </div>
-                );
-            } ) }
-        </div>
-    );
+                  </div>
+                </Link>
+
+                <div className="card-category">
+                  <span className="btn btn-sm btn-secondary transform-scale-h border-0">
+                    {news.attributes?.tags[0]?.title}
+                  </span>
+                </div>
+              </div>
+
+              <div className="card-body">
+                <h5 className="card-title">
+                  <Link
+                    title={news.attributes?.title}
+                    to={`/news/${news.attributes.id}`}>
+                    {news.attributes?.title}
+                  </Link>
+                </h5>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+  );
 };
 
 export default NewsHome;

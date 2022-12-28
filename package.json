@@ -12,7 +12,7 @@
         "axios": "^1.2.1",
         "bootstrap": "^4.3.1",
         "css-loader": "^3.5.3",
-        "fslightbox-react": "1.2.0",
+        "fslightbox-react": "^1.6.2-2",
         "isotope-layout": "^3.0.6",
         "node": "13.7.0",
         "prismjs": "^1.20.0",

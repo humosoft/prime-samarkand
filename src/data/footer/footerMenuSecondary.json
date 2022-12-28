@@ -1,14 +1,11 @@
 [
     {
         "id": 1,
-        "title": "LinkedIn",
-        "link": "#",
+        "title": "youtube",
         "icon": "fab fa-linkedin-in"
     },
     {
-        "id": 2,
-        "title": "Facebook",
-        "link": "#",
+        "title": "facebook",
         "icon": "fab fa-facebook-f"
     }
 ]

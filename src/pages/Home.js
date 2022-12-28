@@ -12,16 +12,21 @@ import ContactsContent from "../blocks/contacts/ContactsContent";
 import useAxios from "../hooks/useAxios";
 import { TranslationContext } from "../context/TranslationContext";
 import { GlobalContentContext } from "../context/GlobalContentContext";
+import { Link } from "react-router-dom";
 
 export default function Home() {
-  const { lang, translations } = useContext(TranslationContext);
+  const {
+    lang,
+    translations
+  } = useContext(TranslationContext);
   const { global } = useContext(GlobalContentContext);
   //it actually fetches home page data, it was mistake in backend
   const { response } = useAxios({
     endpoint: "/hero-banner",
     params: {
       locale: lang,
-      populate: "heroBanner.bg,aboutUs.image,aboutUs.video,whyUs,services",
+      populate:
+        "heroBanner.bg,aboutUs.image,aboutUs.video,aboutUs.counter,whyUs.Items,services",
     },
   });
 
@@ -104,22 +109,29 @@ export default function Home() {
               </h2>
             </div>
 
-            {response?.data?.data?.attributes?.services?.data && (
-              <ServicesContent
-                servicesId={response?.data?.data?.attributes?.services?.data?.map(
-                  (x) => x?.id
-                )}
-              />
-            )}
+            <ServicesContent />
           </div>
         </section>
 
         <section id="about-us" className="block spacer p-top-xl">
           <div className="wrapper">
             <div className="row gutter-width-md">
-              <AboutUsPrimary isHomepage={true} />
+              <AboutUsPrimary
+                counters={response?.data?.data?.attributes?.aboutUs?.counter}
+                title={response?.data?.data?.attributes?.aboutUs?.title}
+                description={response?.data?.data?.attributes?.aboutUs?.text}
+              />
 
-              <AboutUsMedia />
+              <AboutUsMedia
+                youtubeUrl={
+                  response?.data?.data?.attributes?.aboutUs
+                    ?.youtubeEmbedVideoUrl
+                }
+                image={
+                  response?.data?.data?.attributes?.aboutUs?.image?.data
+                    ?.attributes?.url
+                }
+              />
             </div>
           </div>
         </section>
@@ -129,18 +141,16 @@ export default function Home() {
             <div className="wrapper">
               <div className="title">
                 <h2>
-                  <a
-                    title="Why us"
-                    className="transform-scale-h"
-                    href={"/why-us"}>
-                    Why us
-                    <i className="fas fas-space-l fa-long-arrow-alt-right align-top"></i>
-                  </a>
+                  <span className="transform-scale-h">
+                    {response?.data?.data?.attributes?.whyUs?.title}
+                  </span>
                 </h2>
               </div>
             </div>
-
-            <WhyUsContent />
+            {/* Typo from backend ( */}
+            <WhyUsContent
+              items={response?.data?.data?.attributes?.whyUs?.Items}
+            />
           </div>
         </section>
 
@@ -148,13 +158,9 @@ export default function Home() {
           <div className="wrapper">
             <div className="title">
               <h2>
-                <a
-                  title="Gallery"
-                  className="transform-scale-h"
-                  href={"/gallery"}>
-                  Gallery
-                  <i className="fas fas-space-l fa-long-arrow-alt-right align-top"></i>
-                </a>
+                <span className="transform-scale-h">
+                  {translations?.gallery}
+                </span>
               </h2>
             </div>
           </div>
@@ -162,53 +168,14 @@ export default function Home() {
           <GalleryContent />
         </section>
 
-        {/* <section id="reviews" className="block spacer p-top-xl">
-          <div className="wrapper">
-            <div className="title">
-              <h2>
-                <a
-                  title="Customer reviews"
-                  className="transform-scale-h"
-                  href={ "/reviews"}>
-                  Customer reviews
-                  <i className="fas fas-space-l fa-long-arrow-alt-right align-top"></i>
-                </a>
-              </h2>
-            </div>
-
-            <ReviewsContent />
-          </div>
-        </section> */}
-
-        {/* <section id="clients" className="block spacer p-top-xl">
-          <div className="wrapper">
-            <div className="title">
-              <h2>
-                <a
-                  title="Our clients"
-                  className="transform-scale-h"
-                  href={ "/clients"}>
-                  Our clients
-                  <i className="fas fas-space-l fa-long-arrow-alt-right align-top"></i>
-                </a>
-              </h2>
-            </div>
-
-            <ClientsList />
-          </div>
-        </section> */}
-
         <section id="news" className="block spacer p-top-xl">
           <div className="wrapper">
             <div className="title">
               <h2>
-                <a
-                  title="Current news"
-                  className="transform-scale-h"
-                  href={"/news"}>
-                  Current news
+                <Link className="transform-scale-h" to="/news">
+                  {translations?.currentNews}
                   <i className="fas fas-space-l fa-long-arrow-alt-right align-top"></i>
-                </a>
+                </Link>
               </h2>
             </div>
 
@@ -220,13 +187,10 @@ export default function Home() {
           <div className="wrapper">
             <div className="title">
               <h2>
-                <a
-                  title="Contacts"
-                  className="transform-scale-h"
-                  href={"/contacts"}>
-                  Contacts
+                <span className="transform-scale-h">
+                  {translations?.contacts}
                   <i className="fas fas-space-l fa-long-arrow-alt-right align-top"></i>
-                </a>
+                </span>
               </h2>
             </div>
           </div>

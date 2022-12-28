@@ -1,35 +1,30 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { TranslationContext } from "../../context/TranslationContext";
 
-import GalleryPicturesData from '../../data/gallery/galleryPictures.json';
+import useAxios from "../../hooks/useAxios";
+import GalleryItem from "./GalleryItem";
 
 const GalleryContent = () => {
-    return (
-        <div className="wrapper">
-            <div className="content">
-                <div className="gallery-items clearfix">
-                    { GalleryPicturesData && GalleryPicturesData.map( ( galleryPictures, key ) => {  
-                        return ( 
-                            <a key={ key } title= { galleryPictures.title } className="gallery-item" href={  galleryPictures.link }>
-                                <div className="gallery-content">
-                                    <div className="text">
-                                        <h6>{ galleryPictures.title }</h6>
-                                    </div>
-                                </div>
-
-                                <div className="img object-fit">
-                                    <div className="object-fit-cover">
-                                        <img src={ galleryPictures.imageLink } alt={ galleryPictures.title } />
-                                    </div>
-                                </div>
-
-                                <div className="img-bg-color"></div>
-                            </a>
-                        );
-                    })}
-                </div>
-            </div>
+  const { lang } = useContext(TranslationContext);
+  //it actually fetches home page data, it was mistake in backend
+  const { response } = useAxios({
+    endpoint: "/gallery",
+    params: {
+      locale: lang,
+      populate:
+        "item.images",
+    },
+  });
+  return (
+    <div className="wrapper">
+      <div className="content">
+        <div className="gallery-items clearfix">
+          {response?.data?.data &&
+            response?.data?.data.attributes?.item?.map((item) => <GalleryItem key={item.id} item={item} />)}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default GalleryContent;

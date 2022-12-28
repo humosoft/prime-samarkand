@@ -1,35 +1,42 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { GlobalContentContext } from "../../context/GlobalContentContext";
+import { TranslationContext } from "../../context/TranslationContext";
 
-import FooterMenu from '../footer/FooterMenu';
+import FooterMenu from "../footer/FooterMenu";
 
 const FooterWidget = () => {
-    return (
-      <div className="footer-widgets">
-          <div className="footer-widget-area d-flex flex-wrap">
-              <div className="widget">
-                  <h5 className="widget-title">About us</h5>
+  const { translations } = useContext(TranslationContext);
+  const { global } = useContext(GlobalContentContext);
 
-                  <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-              </div>
+  return (
+    <div className="footer-widgets">
+      <div className="footer-widget-area d-flex flex-wrap">
+        <div className="widget">
+          <h5 className="widget-title">{translations?.footerAboutUs}</h5>
 
-              <div className="widget">
-                  <h5 className="widget-title">Menu</h5>
+          <p>{translations?.footerSubtitle}</p>
+        </div>
 
-                  <FooterMenu />
-              </div>
+        <div className="widget">
+          <h5 className="widget-title">{translations?.footerMenu}</h5>
 
-              <div className="widget">
-                  <h5 className="widget-title">Contacts</h5>
+          <FooterMenu />
+        </div>
 
-                  <p>Texas, Houston, 136 Woodrow Way</p>
+        <div className="widget">
+          <h5 className="widget-title">{translations?.footerContacts}</h5>
 
-                  <p><a href="mailto:info@domain.com">info@domain.com</a></p>
+          <p>{global?.address}</p>
 
-                  <p>832-576-5370</p>
-              </div>
-          </div>
+          <p>
+            <a href={`mailto:${global?.email}`}>{global?.email}</a>
+          </p>
+
+          <p>{global?.phone}</p>
+        </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default FooterWidget;

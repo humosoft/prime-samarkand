@@ -7,18 +7,14 @@ import useAxios from "../../hooks/useAxios";
 export default function ServicesContent({ servicesId }) {
   const { lang, translations } = useContext(TranslationContext);
   //it actually fetches home page data, it was mistake in backend
-  const { response, loading } = useAxios({
+  const { response } = useAxios({
     endpoint: "/services",
     params: {
       locale: lang,
       populate: "*",
-      filters: {
-        id: {
-          $in: servicesId,
-        },
-      },
     },
   });
+
   return (
     <div className="service-items clearfix type-1">
       {response?.data?.data?.map((service) => (

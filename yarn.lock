@@ -5323,10 +5323,10 @@ fsevents@~2.3.2:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
-fslightbox-react@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/fslightbox-react/-/fslightbox-react-1.2.0.tgz#c0a5a8458dc8e35b91c4d238665c72f11eb4b372"
-  integrity sha512-P+XyXVD1T4ala9wSujKv5aZSxsBy/noFef133kMwFIKaM6tO9XqB9hyZemy5N0x5KNbTjnh+bGSW4dkjDjSEuQ==
+fslightbox-react@^1.6.2-2:
+  version "1.6.2-2"
+  resolved "https://registry.yarnpkg.com/fslightbox-react/-/fslightbox-react-1.6.2-2.tgz#8525bf1d5a36d608b7917a032f1c35c88b1a87a9"
+  integrity sha512-7jpiU6AiQkauIhKhN9ko3UIZ9GY4SUO1AoMzOypUFnmfH0+UgPgPeShJFN+B70bZHhmFjjH7r7xjyPFSo4mzCQ==
 
 fstream@^1.0.0, fstream@^1.0.12:
   version "1.0.12"

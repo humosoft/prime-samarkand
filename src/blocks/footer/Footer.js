@@ -1,23 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Copyright from "../footer/Copyright";
 import FooterWIdget from "../footer/FooterWIdget";
 import FooterMenuSecondary from "../footer/FooterMenuSecondary";
 import ScrollToTop from "../../components/scroll/ScrollToTop";
+import { SERVER_URL } from "../../helpers/constants";
+import { GlobalContentContext } from "../../context/GlobalContentContext";
 
 const Footer = () => {
+  const { global } = useContext(GlobalContentContext);
+  
   return (
     <footer id="footer" className="site-footer">
       <ScrollToTop />
 
       <div className="wrapper">
         <FooterWIdget />
-    
+
         <div className="footer">
           <div className="d-flex flex-column flex-lg-row flex-xl-row justify-content-between">
             <div className="align-self-center">
               <div className="logo logo-secondary">
-                <img src="assets/img/logo/logo-2-light.svg" alt="Logo" />
+                {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                <img
+                  width="90"
+                  src={`${SERVER_URL}${global?.logo?.data?.attributes?.url}`}
+                  alt={global?.title}
+                />
               </div>
             </div>
 

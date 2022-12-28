@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { TranslationContext } from "../context/TranslationContext";
 // import { useTranslation } from "react-i18next";
 
 export default function useAxios({
@@ -9,14 +10,15 @@ export default function useAxios({
   headers,
   body,
 }) {
+  const { lang } = useContext(TranslationContext);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
 
   useEffect(() => {
     fetchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang]);
 
   async function fetchData() {
     try {

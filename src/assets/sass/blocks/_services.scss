@@ -3,22 +3,25 @@
 //=================================================
 
 .service-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media #{$media_xl} {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media #{$media_sm} {
+        grid-template-columns: 1fr;
+    }
+
     .service-item {
         position: relative;
         overflow: hidden;
-        float: left;
-        width: 33.33%;
         color: $body_text_tertiary_color;
         transition-property: none;
         transition-duration: 0s;
 
-        @media #{$media_xl} {
-            width: 50%;
-        }
-
-        @media #{$media_sm} {
-            width: 100%;
-        }
+        
 
         h1, h2, h3, h4, h5, h6 {
             color: $body_text_tertiary_color;
@@ -52,6 +55,7 @@
         }
 
         .img {
+            height: 100%;
             &.object-fit {
                 &:before {
                     padding-top: 110%;
@@ -83,7 +87,8 @@
             }
 
             img {
-                aspect-ratio: 1
+                width: 100%;
+                height: 100%;
             }
         }
 
