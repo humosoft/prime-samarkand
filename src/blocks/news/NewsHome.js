@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { TranslationContext } from "../../context/TranslationContext";
 
-import NewsHomeItemsData from "../../data/news/newsHomeItems";
 import { SERVER_URL } from "../../helpers/constants";
 import useAxios from "../../hooks/useAxios";
 
@@ -32,7 +31,7 @@ const NewsHome = () => {
               <div className="card-top position-relative">
                 <Link
                   title={news.attributes.title}
-                  to={`/news/${news.attributes.id}`}>
+                  to={`/news/${news.id}`}>
                   <div className="img object-fit overflow-hidden">
                     <div className="object-fit-cover transform-scale-h">
                       <img
@@ -57,7 +56,7 @@ const NewsHome = () => {
                 <h5 className="card-title">
                   <Link
                     title={news.attributes?.title}
-                    to={`/news/${news.attributes.id}`}>
+                    to={`/news/${news.id}`}>
                     {news.attributes?.title}
                   </Link>
                 </h5>

@@ -190,21 +190,3 @@
     }
   }
 }
-
-/*=============================
-// 404 page
-=============================*/
-.error404 {
-  .site-footer {
-    background-color: transparent;
-    color: $body_text_secondary_color;
-
-    a {
-      color: $body_links_color;
-
-      &:hover {
-        color: $body_links_hover_color;
-      }
-    }
-  }
-}

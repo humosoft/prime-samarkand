@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { TranslationContext } from "../../context/TranslationContext";
 
-const NewsTags = () => {
-    return (
-        <div className="tags">
-            <p>
-                <span className="tags-title">Tags:</span>
-                <a title="Art" href={  '/news' }>Logistic</a>
-                <a title="Culture" href={  '/news' }>Transportation</a>
-                <a title="Capital" href={  '/news' }>Storage</a>
-            </p>
-        </div>
-    );
+const NewsTags = ({tags}) => {
+  const {translations} = useContext(TranslationContext)
+  return (
+    <div className="tags">
+      <p>
+        <span className="tags-title">{translations?.tags}</span>
+        {tags?.map(tag => (
+          <span className="tags-item" key={tag.id}>
+            {tag.title}
+          </span>
+        ))}
+      </p>
+    </div>
+  );
 };
 
 export default NewsTags;

@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import { Modal } from "react-bootstrap";
 
 import HeaderLogo from "../../blocks/logo/HeaderLogo";
-import ModalMenuPrimary from "../../blocks/menu/ModalMenuPrimary";
 import ModalMenuHome from "../../blocks/menu/ModalMenuHome";
 import { Link } from "react-router-dom";
 import { TranslationContext } from "../../context/TranslationContext";
@@ -30,7 +29,7 @@ class MenuModal extends Component {
 
   render() {
     function Menu(props) {
-      return <ModalMenuHome />
+      return <ModalMenuHome onClick={props.onClick} />
     }
 
     return (
@@ -80,6 +79,7 @@ class MenuModal extends Component {
                       <ul className="list-unstyled">
                         <li>
                           <Link
+                            onClick={this.close}
                             to="send-resume"
                             className="d-flex btn btn-link border-0 p-0 min-w-auto transform-scale-h icon-active">
                             <i className="fas fas-space-r fa-file-alt"></i>
@@ -89,7 +89,7 @@ class MenuModal extends Component {
                       </ul>
                     </nav>
 
-                    <Menu />
+                    <Menu onClick={this.close} />
                   </div>
                 </div>
               </div>

@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 import Copyright from "../footer/Copyright";
 import FooterWIdget from "../footer/FooterWIdget";
 import FooterMenuSecondary from "../footer/FooterMenuSecondary";
-import ScrollToTop from "../../components/scroll/ScrollToTop";
 import { SERVER_URL } from "../../helpers/constants";
 import { GlobalContentContext } from "../../context/GlobalContentContext";
 
@@ -12,7 +11,6 @@ const Footer = () => {
   
   return (
     <footer id="footer" className="site-footer">
-      <ScrollToTop />
 
       <div className="wrapper">
         <FooterWIdget />

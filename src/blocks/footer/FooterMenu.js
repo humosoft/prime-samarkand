@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { TranslationContext } from "../../context/TranslationContext";
-import { Link } from "react-scroll";
+import { DynamicLink as Link } from "../../components/DynamicLink"; 
 
 class FooterMenu extends Component {
   constructor(props) {

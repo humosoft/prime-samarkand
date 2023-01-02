@@ -12,13 +12,12 @@ import ContactsContent from "../blocks/contacts/ContactsContent";
 import useAxios from "../hooks/useAxios";
 import { TranslationContext } from "../context/TranslationContext";
 import { GlobalContentContext } from "../context/GlobalContentContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import Meta from "../components/Meta";
 
 export default function Home() {
-  const {
-    lang,
-    translations
-  } = useContext(TranslationContext);
+  const location = useLocation();
+  const { lang, translations } = useContext(TranslationContext);
   const { global } = useContext(GlobalContentContext);
   //it actually fetches home page data, it was mistake in backend
   const { response } = useAxios({
@@ -36,25 +35,6 @@ export default function Home() {
     document.body.classList.add("header-absolute-true");
     document.body.classList.add("header-fixed-true");
     document.body.classList.add("button-clicked-true");
-
-    const header = document.getElementById("header");
-    const services = document.getElementById("services");
-
-    window.addEventListener(
-      "scroll",
-      function (event) {
-        if (isInViewport(services)) {
-          document.body.classList.add("header-fixed");
-          header.classList.add("animated");
-          header.classList.add("slideInDown");
-        } else {
-          document.body.classList.remove("header-fixed");
-          header.classList.remove("animated");
-          header.classList.remove("slideInDown");
-        }
-      },
-      false
-    );
   };
 
   const disableSections = () => {
@@ -65,36 +45,16 @@ export default function Home() {
     document.body.classList.remove("button-clicked-true");
   };
 
-  const isInViewport = (services) => {
-    let bounding = services.getBoundingClientRect();
-
-    if (window.screenTop - bounding.top > -20) {
-      return true;
-    }
-  };
-
   useEffect(() => {
     initSections();
 
     return disableSections;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [location]);
 
   return (
     <>
-      <MetaTags>
-        <meta charSet="UTF-8" />
-        <title>{global?.title}</title>
-
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={`${global?.description}`} />
-        <meta name="keywords" content="" />
-        <meta name="robots" content="index, follow, noodp" />
-        <meta name="googlebot" content="index, follow" />
-        <meta name="google" content="notranslate" />
-        <meta name="format-detection" content="telephone=no" />
-      </MetaTags>
+      <Meta title={global?.title} description={global?.description} />
 
       <main id="main" className="site-main">
         <PageTitleHome banner={response?.data?.data?.attributes?.heroBanner} />

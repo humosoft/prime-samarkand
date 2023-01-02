@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { TranslationContext } from "../../context/TranslationContext";
 
-const NewsMeta = () => {
-    return (
-        <div className="meta">
-            <p>
-                <span className="date s-small bold">January 5, 2020</span>
+const NewsMeta = ({ createdAt }) => {
+  const { lang } = useContext(TranslationContext);
+  const formatter = Intl.DateTimeFormat(lang, {
+    dateStyle: "full",
+  });
 
-                <span><a className="a-small bold" href={  '/news-single-page' }>By admin</a></span>
+  console.log(createdAt)
 
-                <span className="s-small bold"> - </span>
-
-                <span className="s-small bold">Comments (4)</span>
-
-                <span className="s-small bold"> - </span>
-
-                <span className="category"><a title="Uncategorized" className="a-small bold" href={  '/news' }>Uncategorized</a></span>
-            </p>
-        </div>
-    );
+  return (
+    <div className="meta">
+      <p>
+        <span className="date s-small bold">
+          {createdAt && formatter.format(new Date(createdAt))}
+        </span>
+      </p>
+    </div>
+  );
 };
 
 export default NewsMeta;

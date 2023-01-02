@@ -1,25 +1,21 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { TranslationContext } from "../../context/TranslationContext";
 
-const ServiceInsideWidget = () => {
-    return (
-        <div className="card">
-            <div className="card-body">
-                <h5 className="card-title">Service included</h5>
+const ServiceInsideWidget = ({services}) => {
+  const {translations} = useContext(TranslationContext)
+  return (
+    <div className="card">
+      <div className="card-body">
+        <h5 className="card-title">{translations?.servicesIncluded}</h5>
 
-                <div className="card-text">
-                    <p>Full Container Load (FCL)</p>
-                    <p>Reserve Sailing time</p>
-                    <p>Cargo Insurance</p>
-                    <p>Worldwide Transport</p>
-                    <p>Support 24/7</p>
-                </div>
-            </div>
-
-            <div className="card-link">
-                <a className="btn btn-secondary btn-lg w-100" href={  '/contacts' }>Order plan</a>
-            </div>
+        <div className="card-text">
+          {services?.map(x => (
+            <p key={x.id}>{x.title}</p>
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default ServiceInsideWidget;

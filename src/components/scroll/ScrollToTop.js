@@ -10,7 +10,7 @@ class ScrollToTop extends Component {
         };
     };
 
-    _isMounted = false;
+    _isMounted = false;πhe
 
     componentDidMount() {
         this._isMounted = true;

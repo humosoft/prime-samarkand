@@ -1,9 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Contacts from "./pages/Contacts";
-import Gallery from "./pages/Gallery";
-import GalleryInside from "./pages/GalleryInside";
 // import Clients from "./pages/Clients";
 import News from "./pages/News";
 import NewsSinglePage from "./pages/NewsSinglePage";
@@ -13,7 +10,7 @@ import NewsSinglePage from "./pages/NewsSinglePage";
 import ServiceInside from "./pages/ServiceInside";
 import page404 from "./pages/404";
 // import WhyUs from "./pages/WhyUs";
-import UserInterface from "./pages/UserInterface";
+// import UserInterface from "./pages/UserInterface";§s
 import { API_URL } from "./helpers/constants";
 import axios from "axios";
 import TranslationProvider from "./context/TranslationContext";
@@ -21,6 +18,7 @@ import Loading from "./blocks/loading/Loading";
 import Header from "./blocks/header/Header";
 import Footer from "./blocks/footer/Footer";
 import GlobalContentProvider from "./context/GlobalContentContext";
+import Resume from "./pages/Resume";
 
 axios.defaults.baseURL = API_URL;
 
@@ -33,19 +31,20 @@ function App() {
           <Header />
           <Switch>
             <Route exact path={"/"} component={Home} />
-            {/* <Route exact path={"/about-us"} component={About} /> */}
-            <Route exact path={"/contacts"} component={Contacts} />
+            <Route exact path={"/send-resume"} component={Resume} />
+            {/* <Route exact path={"/about-us"} component={About} /> */}§s
+            {/* <Route exact path={"/contacts"} component={Contacts} /> */}
             {/* <Route exact path={"/gallery"} component={Gallery} /> */}
-            <Route exact path={"/gallery-inside"} component={GalleryInside} />
+            {/* <Route exact path={"/gallery-inside"} component={GalleryInside} /> */}
             {/* <Route exact path={"/clients"} component={Clients} /> */}
             <Route exact path={"/news"} component={News} />
             <Route
               exact
-              path={"/news-single-page"}
+              path={"/news/:id"}
               component={NewsSinglePage}
             />
-            <Route exact path={"/service-inside"} component={ServiceInside} />
-            <Route exact path={"/ui"} component={UserInterface} />
+            <Route exact path={"/services/:id"} component={ServiceInside} />
+            {/* <Route exact path={"/ui"} component={UserInterface} /> */}
             <Route exact component={page404} />
           </Switch>
           <Footer />

@@ -1,16 +1,12 @@
 import React, { useContext } from "react";
-import { Link } from "react-scroll";
+import { DynamicLink as Link } from "../../components/DynamicLink";
 import { TranslationContext } from "../../context/TranslationContext";
 
-const ModalMenuHome = () => {
+const ModalMenuHome = ({ onClick }) => {
   const { translations } = useContext(TranslationContext);
 
   const modalOff = () => {
-    let e = document.getElementById("close-modal");
-
-    if (e) {
-      e.click();
-    }
+    onClick();
   };
 
   return (
@@ -19,11 +15,8 @@ const ModalMenuHome = () => {
         <li className="nav-item">
           <Link
             to="services"
-            spy={true}
-            smooth={true}
-            duration={300}
             onClick={modalOff}
-            href="#">
+            href="#services">
             {translations?.services}
           </Link>
         </li>
@@ -31,11 +24,8 @@ const ModalMenuHome = () => {
         <li className="nav-item">
           <Link
             to="about-us"
-            spy={true}
-            smooth={true}
-            duration={300}
             onClick={modalOff}
-            href="#">
+            href="#about-us">
             {translations?.aboutUs}
           </Link>
         </li>
@@ -43,11 +33,8 @@ const ModalMenuHome = () => {
         <li className="nav-item">
           <Link
             to="why-us"
-            spy={true}
-            smooth={true}
-            duration={300}
             onClick={modalOff}
-            href="#">
+            href="#why-us">
             {translations?.whyUs}
           </Link>
         </li>
@@ -55,11 +42,8 @@ const ModalMenuHome = () => {
         <li className="nav-item nav-item-has-children dropdown-child-click-effect">
           <Link
             to="gallery"
-            spy={true}
-            smooth={true}
-            duration={300}
             onClick={modalOff}
-            href="#">
+            href="#gallery">
             {translations?.gallery}
           </Link>
         </li>
@@ -67,11 +51,8 @@ const ModalMenuHome = () => {
         <li className="nav-item">
           <Link
             to="news"
-            spy={true}
-            smooth={true}
-            duration={300}
             onClick={modalOff}
-            href="#">
+            href="#news">
             {translations?.news}
           </Link>
         </li>
@@ -79,11 +60,8 @@ const ModalMenuHome = () => {
         <li className="nav-item">
           <Link
             to="contacts"
-            spy={true}
-            smooth={true}
-            duration={300}
             onClick={modalOff}
-            href="#">
+            href="#contacts">
             {translations?.contacts}
           </Link>
         </li>
