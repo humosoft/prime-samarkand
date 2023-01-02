@@ -1,7 +1,5 @@
 import React, { Fragment, useContext, useEffect } from "react";
 
-import FooterSecondary from "../blocks/footer/FooterSecondary";
-
 import PageTitle404 from "../blocks/page-title/PageTitle404";
 import BackToHome from "../components/button/BackToHome";
 import Meta from "../components/Meta";
