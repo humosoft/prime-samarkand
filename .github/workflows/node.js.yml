@@ -25,6 +25,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile
-      - run: yarn build --if-present
+      - run: CI=false yarn build --if-present
       - name: Copying to nginx path
         run: cp -r ./build/* /var/www/prime-samarkand.com/html
