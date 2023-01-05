@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
+import PageTitleCommon from "../blocks/page-title/PageTitleCommon";
 // import ReCAPTCHA from "react-google-recaptcha";
 import Meta from "../components/Meta";
 import { GlobalContentContext } from "../context/GlobalContentContext";
 import { TranslationContext } from "../context/TranslationContext";
+import { SERVER_URL } from "../helpers/constants";
 // import { CAPTCHA_KEY } from "../helpers/constants";
 import useLazyAxios from "../hooks/useLazyAxios";
 
@@ -38,8 +40,8 @@ const sizes = {
 
 export default function Resume() {
   const { translations } = useContext(TranslationContext);
-  const {global} = useContext(GlobalContentContext)
-  const history = useHistory()
+  const { global } = useContext(GlobalContentContext);
+  const history = useHistory();
   const { fetchData, loading, response } = useLazyAxios({
     endpoint: "/resumes",
     method: "POST",
@@ -76,19 +78,18 @@ export default function Resume() {
     fetchData({
       body: newFormData,
     }).catch(() => {
-      alert(translations?.error)
-    })
+      alert(translations?.error);
+    });
   }
 
   useEffect(() => {
-    if(response?.data?.data?.id) {
-      alert(translations?.success)
+    if (response?.data?.data?.id) {
+      alert(translations?.success);
 
-      history.push("/")
+      history.push("/");
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [response])
-  
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [response]);
 
   function getInput(key) {
     if (dataStrings[key] === "text")
@@ -163,8 +164,8 @@ export default function Resume() {
         description={global?.description}
       />
       <main id="main" className="site-main">
+        <PageTitleCommon bg={`${SERVER_URL}${global?.sendResumeImage?.data?.attributes?.url}`} title={translations?.sendResume} />
         <div className="container">
-          <h1 className="text-center mb-3">{translations?.sendResume}</h1>
           <form ref={elForm} onSubmit={handleSubmit} className="px-3 py-3">
             <div className="row">
               {Object.keys(dataStrings).map((key) => (

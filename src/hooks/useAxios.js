@@ -9,6 +9,7 @@ export default function useAxios({
   method = "GET",
   headers,
   body,
+  watch = [],
 }) {
   const { lang } = useContext(TranslationContext);
   const [loading, setLoading] = useState(false);
@@ -18,7 +19,7 @@ export default function useAxios({
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lang]);
+  }, [lang, ...watch]);
 
   async function fetchData() {
     try {

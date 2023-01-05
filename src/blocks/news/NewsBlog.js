@@ -1,46 +1,73 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import Pagination from "../../components/pagination";
 
-import LoadMoreNews from "../../components/loadmore/LoadMoreNews"
-import NewsBlogItemsData from '../../data/news/newsBlogItems';
+import { TranslationContext } from "../../context/TranslationContext";
+import { SERVER_URL } from "../../helpers/constants";
+import useAxios from "../../hooks/useAxios";
+import useQuery from "../../hooks/useQuery";
 
 const NewsBlog = () => {
-    return (
-        <div className="col-xl-8 col-lg-8 col-md-12">
-            <div className="row gutter-width-md with-pb-lg">
-                { NewsBlogItemsData && NewsBlogItemsData.map( ( item, key ) => {
-                    return (
-                        <div key={ key } className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                            <div className="card card-post">
-                                <div className="card-top position-relative">
-                                    <a title={ item.title } href={  item.link }>
-                                        <div className="img object-fit overflow-hidden">
-                                            <div className="object-fit-cover transform-scale-h">
-                                                <img className="card-top-img" src={ item.imgLink } alt={ item.title } />
+  const query = useQuery();
+  const { lang } = useContext(TranslationContext);
+  const page = +query.get("page") || 1;
+  const { response, loading } = useAxios({
+    endpoint: "/newss",
+    params: {
+      locale: lang,
+      populate: "image,tags",
+      pagination: {
+        pageSize: 9,
+        page: page,
+      },
+    },
+    watch: [page],
+  });
 
-                                                <div className="img-bg-color"></div>
-                                            </div>
-                                        </div>
-                                    </a>
+  return (
+    <>
+      <div className="row gutter-width-md with-pb-lg">
+        {response?.data?.data.map(({attributes: item, id}) => (
+          <div key={id} className="col-lg-4 col-md-6 col-sm-6">
+            <div className="card card-post">
+              <div className="card-top position-relative">
+                <Link to={`/news/${id}`} title={item.title}>
+                  <div className="img object-fit overflow-hidden">
+                    <div className="object-fit-cover transform-scale-h">
+                      <img
+                        className="card-top-img"
+                        src={`${SERVER_URL}${item.image?.data?.attributes?.url}`}
+                        alt={item.title}
+                      />
 
-                                    <div className="card-category">
-                                        <a title={ item.categoryTitle } className="btn btn-sm btn-secondary transform-scale-h border-0" href={ `${  item.categoryLink }` }>{ item.categoryTitle }</a>
-                                    </div>
-                                </div>
+                      <div className="img-bg-color"></div>
+                    </div>
+                  </div>
+                </Link>
 
-                                <div className="card-body">
-                                    <h5 className="card-title">
-                                        <a title={ item.title } href={  item.link }>{ item.title }</a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                    );
-                } ) }
+                <div className="card-category">
+                  <span
+                    className="btn btn-sm btn-secondary transform-scale-h border-0">
+                    {item?.tags[0]?.title}
+                  </span>
+                </div>
+              </div>
+
+              <div className="card-body">
+                <h5 className="card-title">
+                  <Link title={item.title} to={`/news/${id}`}>
+                    {item.title}
+                  </Link>
+                </h5>
+              </div>
             </div>
+          </div>
+        ))}
+      </div>
 
-            <LoadMoreNews />
-        </div>
-    );
+      <Pagination loading={loading} page={page} pageCount={response?.data?.meta?.pagination?.pageCount} />
+    </>
+  );
 };
 
 export default NewsBlog;

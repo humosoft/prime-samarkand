@@ -1,11 +1,16 @@
-import React, { Fragment, useEffect } from "react";
-import MetaTags from "react-meta-tags";
+import React, { Fragment, useContext, useEffect } from "react";
 
 import PageTitleCommon from "../blocks/page-title/PageTitleCommon";
-import Widget from "../blocks/widget/Widget";
 import NewsBlog from "../blocks/news/NewsBlog";
+import { TranslationContext } from "../context/TranslationContext";
+import { GlobalContentContext } from "../context/GlobalContentContext";
+import Meta from "../components/Meta";
+import { SERVER_URL } from "../helpers/constants";
 
 const News = () => {
+  const { translations } = useContext(TranslationContext);
+  const { global } = useContext(GlobalContentContext);
+
   useEffect(() => {
     document.body.classList.add("blog");
     document.body.classList.add("header-menu-true");
@@ -18,38 +23,21 @@ const News = () => {
 
   return (
     <Fragment>
-      <MetaTags>
-        <meta charSet="UTF-8" />
-        <title>
-          News | Erso - Logistics & Transportation React JS Template
-        </title>
-
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <meta name="robots" content="index, follow, noodp" />
-        <meta name="googlebot" content="index, follow" />
-        <meta name="google" content="notranslate" />
-        <meta name="format-detection" content="telephone=no" />
-      </MetaTags>
-
+      <Meta
+        title={`${global?.title} - ${translations?.news}`}
+        description={global?.description}
+      />
       <main id="main" className="site-main">
-        <PageTitleCommon title="News" />
+        <PageTitleCommon
+          bg={`${SERVER_URL}${global?.newsImage?.data?.attributes?.url}`}
+          title={translations?.news}
+        />
 
         <section id="page-content" className="block spacer p-top-xl">
           <div className="wrapper">
             <div className="content">
               <div id="blog">
-                <div className="row gutter-width-md style-default">
-                  <NewsBlog />
-
-                  <div className="col-xl-4 col-lg-4 col-md-12">
-                    <aside id="aside" className="widget-area">
-                      <Widget />
-                    </aside>
-                  </div>
-                </div>
+                <NewsBlog />
               </div>
             </div>
           </div>

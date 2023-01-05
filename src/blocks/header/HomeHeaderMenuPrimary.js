@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { DynamicLink as Link } from "../../components/DynamicLink";
+import {Link as RouterLink} from "react-router-dom"
 import { TranslationContext } from "../../context/TranslationContext";
 
 class HomeHeaderMenuPrimary extends Component {
@@ -32,9 +33,9 @@ class HomeHeaderMenuPrimary extends Component {
           </li>
 
           <li className="nav-item" id="nav-news">
-            <Link to="news" href="#news">
+            <RouterLink to="/news">
               {this.context?.translations?.news}
-            </Link>
+            </RouterLink>
           </li>
 
           <li className="nav-item" id="nav-contacts">
