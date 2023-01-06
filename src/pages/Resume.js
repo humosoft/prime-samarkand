@@ -164,7 +164,7 @@ export default function Resume() {
         description={global?.description}
       />
       <main id="main" className="site-main">
-        <PageTitleCommon bg={`${SERVER_URL}${global?.sendResumeImage?.data?.attributes?.url}`} title={translations?.sendResume} />
+        <PageTitleCommon bg={`${SERVER_URL}${global?.sendResumeImage?.data?.attributes?.formats?.large?.url}`} title={translations?.sendResume} />
         <div className="container">
           <form ref={elForm} onSubmit={handleSubmit} className="px-3 py-3">
             <div className="row">

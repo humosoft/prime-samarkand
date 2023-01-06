@@ -41,7 +41,7 @@ export default function ServicesContent({ servicesId }) {
           <div className="img object-fit">
             <div className="object-fit-cover">
               <img
-                src={`${SERVER_URL}${service.attributes.images?.data[0]?.attributes?.url}`}
+                src={`${SERVER_URL}${service.attributes.images?.data[0]?.attributes.formats?.medium?.url}`}
                 alt={service.attributes.title}
               />
             </div>

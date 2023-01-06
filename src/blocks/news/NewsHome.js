@@ -36,7 +36,7 @@ const NewsHome = () => {
                     <div className="object-fit-cover transform-scale-h">
                       <img
                         className="card-top-img"
-                        src={`${SERVER_URL}${news.attributes.image?.data?.attributes.url}`}
+                        src={`${SERVER_URL}${news.attributes.image?.data?.attributes?.formats?.medium?.url}`}
                         alt={news.attributes.title}
                       />
 

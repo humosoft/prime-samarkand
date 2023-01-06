@@ -659,13 +659,6 @@ body {
   }
 }
 
-body:not(.home) {
-  .site-main {
-    padding-top: var(--header-height);
-  }
-}
-
-
 .custom-input-file {
   input[type="file"] {
     margin-left: -2px !important;

@@ -89,7 +89,7 @@ export default function Home() {
                 }
                 image={
                   response?.data?.data?.attributes?.aboutUs?.image?.data
-                    ?.attributes?.url
+                    ?.attributes?.medium?.url
                 }
               />
             </div>

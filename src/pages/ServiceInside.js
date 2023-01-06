@@ -61,14 +61,14 @@ const ServiceInside = () => {
       <main id="main" className="site-main">
         <PageTitleCommon
           title={response?.data?.data?.attributes?.title}
-          bg={`${SERVER_URL}${response?.data?.data?.attributes?.images?.data?.[0]?.attributes?.url}`}
+          bg={`${SERVER_URL}${response?.data?.data?.attributes?.images?.data?.[0]?.attributes?.formats?.large.url}`}
         />
 
         <section id="page-content" className="spacer p-top-xl">
           <div className="wrapper">
             <div className="content">
               <div id="single">
-                <div className="row gutter-width-md single-content">
+                <div className="row gutter-width-md single-content mb-5">
                   <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12">
                     {response?.data?.data?.attributes?.images?.data && (
                       <ServiceInsideSwiper

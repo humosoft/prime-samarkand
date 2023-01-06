@@ -9,7 +9,7 @@ export default function PageTitleHome({ banner }) {
       id="page-title"
       className="block"
       style={{
-        backgroundImage: `url("${SERVER_URL}${banner?.bg?.data?.attributes?.url}")`,
+        backgroundImage: `url("${SERVER_URL}${banner?.bg?.data?.attributes?.formats?.large?.url}")`,
       }}>
       <div className="wrapper h-100">
         <div className="d-flex justify-content-between position-relative h-100">

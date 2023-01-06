@@ -65,20 +65,20 @@ const NewsSinglePage = () => {
       <main id="main" className="site-main">
         <PageTitleCommon
           title={response?.data?.data?.attributes?.title}
-          bg={`${SERVER_URL}${response?.data?.data?.attributes?.image?.data?.attributes?.url}`}
+          bg={`${SERVER_URL}${response?.data?.data?.attributes?.image?.data?.attributes?.formats?.large?.url}`}
         />
 
         <section id="page-content" className="block spacer p-top-xl">
           <div className="wrapper">
             <div className="content">
               <div id="single">
-                <div className="row gutter-width-md single-content">
+                <div className="row gutter-width-md single-content mb-5">
                   <div className="container">
                     <div className="img object-fit">
                       <div className="object-fit-cover">
                         {/* eslint-disable-next-line jsx-a11y/alt-text */ }
                         <img
-                          src={`${SERVER_URL}${response?.data?.data?.attributes?.image?.data?.attributes?.url}`}
+                          src={`${SERVER_URL}${response?.data?.data?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                           alt={response?.data?.data?.attributes?.title}
                         />
                       </div>

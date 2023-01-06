@@ -10,15 +10,13 @@ const Header = () => {
   const { translations } = useContext(TranslationContext);
   const location = useLocation();
 
-
   useEffect(() => {
     const header = document.getElementById("header");
-    const services = document.getElementById("services");
-    
+
     window.addEventListener(
       "scroll",
       function (event) {
-        if (isInViewport(services)) {
+        if (window.scrollY > 50) {
           document.body.classList.add("header-fixed");
           header.classList.add("animated");
           header.classList.add("slideInDown");
@@ -27,20 +25,14 @@ const Header = () => {
           header.classList.remove("animated");
           header.classList.remove("slideInDown");
         }
-        document.body.style.setProperty("--header-height", `${header.getBoundingClientRect().height}px`)
+        document.body.style.setProperty(
+          "--header-height",
+          `${header.getBoundingClientRect().height}px`
+        );
       },
       false
     );
-  
-  }, [location])
-
-  const isInViewport = (services) => {
-    let bounding = services ? services.getBoundingClientRect().top : 30;
-
-    if (window.screenTop - bounding > -20) {
-      return true;
-    }
-  };
+  }, [location]);
 
   return (
     <header id="header" className="site-header">
@@ -60,7 +52,7 @@ const Header = () => {
             <div className="d-flex">
               <div className="action align-self-center">
                 <Link
-                  to="send-resume"
+                  to="/send-resume"
                   className="d-flex btn btn-link border-0 p-0 min-w-auto transform-scale-h icon-active">
                   <i className="fas fas-space-r fa-file-alt"></i>
                   {translations?.sendResume}

@@ -12,7 +12,7 @@ class ServiceInsideSwiper extends Component {
       xPos: "",
       images: this.props.images?.map((x) => ({
         id: x.id,
-        imgLink: `${SERVER_URL}${x.attributes.url}`,
+        imgLink: `${SERVER_URL}${x.attributes?.formats?.large?.url}`,
         alt: x.alternativeText,
       }))
     };

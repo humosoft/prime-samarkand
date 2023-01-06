@@ -6,55 +6,51 @@
 // All page
 =============================*/
 main {
-    padding-top: $main_padding_t;
-    padding-bottom: $main_padding_b;
+  &.content-no-spacing {
+    padding-top: 0;
+    padding-bottom: 0;
 
-    &.content-no-spacing {
-        padding-top: 0;
-        padding-bottom: 0;
-
-        #page-content {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
+    #page-content {
+      padding-top: 0;
+      padding-bottom: 0;
     }
+  }
 }
 
 /*=============================
 // Home page
 =============================*/
 .home {
-    main {
-        padding-bottom: 0;
-    }
+  main {
+    padding-bottom: 0;
+  }
 }
 
 /*=============================
 // Home blog page
 =============================*/
 .home {
-    &.blog {
-        main {
-            padding-bottom: $main_padding_b;
-        }
+  &.blog {
+    main {
+      padding-bottom: $main_padding_b;
     }
+  }
 }
-
 
 /*=============================
 // Search results page
 =============================*/
 .search-results {
-    main {
-        padding-bottom: $main_padding_b - 2rem;
-    }
+  main {
+    padding-bottom: $main_padding_b - 2rem;
+  }
 }
 
 /*=============================
 // 404 page
 =============================*/
 .error404 {
-    main {
-        padding-bottom: $main_padding_b - 2rem;
-    }
+  main {
+    padding-bottom: $main_padding_b - 2rem;
+  }
 }
